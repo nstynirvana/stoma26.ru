@@ -396,10 +396,12 @@ $strTitle = (isset($arResult["IPROPERTY_VALUES"]["ELEMENT_PREVIEW_PICTURE_FILE_T
                                                     </div> 
                                                 <?}?>                                 
 											<?} elseif(!$arOffer["CAN_BUY"]) {?>
+                                                    <?/*
 												<div class="not_avl">
 													<i class="fa fa-times-circle"></i>
 													<span><?=Loc::getMessage("CATALOG_ELEMENT_NOT_AVAILABLE")?></span>
 												</div>
+ */?>
 											<?}?>
 										</div>
 										<div class="clr"></div>											
@@ -614,11 +616,13 @@ $strTitle = (isset($arResult["IPROPERTY_VALUES"]["ELEMENT_PREVIEW_PICTURE_FILE_T
                                                 </span>
                                             </div>
                                        <?}?>
-									<?} elseif(!$arOffer["CAN_BUY"]) {?>												
+									<?} elseif(!$arOffer["CAN_BUY"]) {?>
+                                            <?/*
 										<div class="not_avl">
 											<i class="fa fa-times-circle"></i>
 											<span><?=Loc::getMessage("CATALOG_ELEMENT_NOT_AVAILABLE")?></span>
 										</div>
+*/?>
 									<?}?>
 								</div>
 							</div>
@@ -735,11 +739,13 @@ $strTitle = (isset($arResult["IPROPERTY_VALUES"]["ELEMENT_PREVIEW_PICTURE_FILE_T
                                         </span>
                                     </div>
                                 <?}?>
-							<?} elseif(!$arResult["CAN_BUY"]) {?>												
+							<?} elseif(!$arResult["CAN_BUY"]) {?>
+                                    <?/*
 								<div class="not_avl">
 									<i class="fa fa-times-circle"></i>
 									<span><?=Loc::getMessage("CATALOG_ELEMENT_NOT_AVAILABLE")?></span>
 								</div>
+*/?>
 							<?}?>
 						</div>
 					<?}?>

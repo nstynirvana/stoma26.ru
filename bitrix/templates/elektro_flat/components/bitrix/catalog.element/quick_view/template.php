@@ -660,11 +660,13 @@ $strTitle = (isset($arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_TI
                                                         </div>                                                                   
                                                    <?}?>    
 												<?}elseif(!$arOffer["CAN_BUY"]) {?>
+                                                        <?/*
 													<meta content="OutOfStock" itemprop="availability" />
 													<div class="not_avl">
 														<i class="fa fa-times-circle"></i>
 														<span><?=GetMessage("CATALOG_ELEMENT_NOT_AVAILABLE")?></span>
 													</div>
+ */?>
 												<?}?>
 											</div>
 										</div>
@@ -724,11 +726,13 @@ $strTitle = (isset($arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_TI
                                                     </div>
                                                <?}?>  
 											<?} else {?>
+                                                    <?/*
 												<meta content="OutOfStock" itemprop="availability" />
 												<div class="not_avl">
 													<i class="fa fa-times-circle"></i>
 													<span><?=GetMessage("CATALOG_ELEMENT_NOT_AVAILABLE")?></span>
 												</div>
+ */?>
 											<?}?>											
 										</div>								
 									</div>						
@@ -883,11 +887,13 @@ $strTitle = (isset($arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_TI
 										</div>
                                         <?}?>
 									<?} elseif(!$arResult["CAN_BUY"]) {?>
+                                            <?/*
 										<meta content="OutOfStock" itemprop="availability" />
 										<div class="not_avl">
 											<i class="fa fa-times-circle"></i>
 											<span><?=GetMessage("CATALOG_ELEMENT_NOT_AVAILABLE")?></span>
 										</div>
+ */?>
 									<?}?>
 								</div>						
 								<?//DETAIL_TIME_BUY_QUANTITY//
@@ -1682,11 +1688,13 @@ $strTitle = (isset($arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_TI
                                                     </span>
                                                 </div>
                                             <?}?>    
-										<?} elseif(!$arOffer["CAN_BUY"]) {?>													
+										<?} elseif(!$arOffer["CAN_BUY"]) {?>
+                                            <?/*
 											<div class="not_avl">
 												<i class="fa fa-times-circle"></i>
 												<span><?=GetMessage("CATALOG_ELEMENT_NOT_AVAILABLE")?></span>
 											</div>
+ */?>
 										<?}?>
 									</div>
 									<div class="clr"></div>											

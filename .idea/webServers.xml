@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c82f8f1d-bd3e-46c3-a4b6-5c0d78ef3580" name="u1452988" url="http://31.31.196.177">
+        <fileTransfer rootFolder="/www/stoma26.ru" host="31.31.196.177" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

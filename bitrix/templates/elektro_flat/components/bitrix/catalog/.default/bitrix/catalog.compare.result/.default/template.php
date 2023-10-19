@@ -207,10 +207,12 @@ foreach($arResult["ITEMS"] as $arElement) {
                                         </div>
                                   <?}?> 
 								<?} else {?>
+                                        <?/*
 									<div class="not_avl">
 										<i class="fa fa-times-circle"></i>
 										<span><?=GetMessage("CATALOG_ELEMENT_NOT_AVAILABLE")?></span>
 									</div>
+ */?>
 								<?}?>
 							</div>		
 						<?//COMPARE_PRICE//
@@ -269,10 +271,12 @@ foreach($arResult["ITEMS"] as $arElement) {
                                         </div>
                                    <?}?>                                   
 								<?} elseif(!$arElement["CAN_BUY"]) {?>
+                                        <?/*
 									<div class="not_avl">
 										<i class="fa fa-times-circle"></i>
 										<span><?=GetMessage("CATALOG_ELEMENT_NOT_AVAILABLE")?></span>
 									</div>
+*/?>
 								<?}?>
 							</div>
 						<?}?>

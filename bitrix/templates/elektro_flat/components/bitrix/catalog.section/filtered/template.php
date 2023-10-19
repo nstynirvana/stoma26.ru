@@ -426,11 +426,13 @@ $inQuickView = in_array("QUICK_VIEW", $arSetting["GENERAL_SETTINGS"]["VALUE"]);
                                             </span>
                                         </div>
                                   <?}?>
-								<?} else {?>									
+								<?} else {?>
+                                        <?/*
 									<div class="not_avl">
 										<i class="fa fa-times-circle"></i>
 										<span><?=GetMessage("CATALOG_ELEMENT_NOT_AVAILABLE")?></span>
 									</div>
+*/?>
 								<?}?>
 							</div>
 							<?//OFFERS_BUY//?>
@@ -469,11 +471,13 @@ $inQuickView = in_array("QUICK_VIEW", $arSetting["GENERAL_SETTINGS"]["VALUE"]);
                                             </span>
                                         </div>
                                     <?}?>    
-								<?} elseif(!$arElement["CAN_BUY"]) {?>									
+								<?} elseif(!$arElement["CAN_BUY"]) {?>
+                                        <?/*
 									<div class="not_avl">
 										<i class="fa fa-times-circle"></i>
 										<span><?=GetMessage("CATALOG_ELEMENT_NOT_AVAILABLE")?></span>
 									</div>
+*/?>
 								<?}?>
 							</div>
 							<?//ITEM_BUY//?>
