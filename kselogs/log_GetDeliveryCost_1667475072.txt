@@ -1,0 +1,103 @@
+<-------------------------------------------REQUEST------------------------------------------->
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:m="http://www.cargo3.ru">
+        <soap:Header/>
+        <soap:Body>
+            <m:Calc>
+                <m:login>НПП ПРОГРЕСС</m:login>
+                <m:password>k3P90nFkPWUR</m:password>
+                <m:data>
+                <m:Key>Destinations</m:Key>
+                <m:List>
+                    <m:Key>Destination</m:Key>
+                    <m:Fields>
+                        <m:Key>SenderGeography</m:Key>
+                        <m:Value>postcode-655750</m:Value>
+                        <m:ValueType>string</m:ValueType>
+                    </m:Fields>
+                    <m:Fields>
+                        <m:Key>RecipientGeography</m:Key>
+                        <m:Value>postcode-</m:Value>
+                        <m:ValueType>string</m:ValueType>
+                    </m:Fields>
+                    <m:Fields>
+                        <m:Key>TypeOfCargo</m:Key>
+                        <m:Value>4aab1fc6-fc2b-473a-8728-58bcd4ff79ba</m:Value>
+                        <m:ValueType>string</m:ValueType>
+                    </m:Fields>
+                    <m:Fields>
+                        <m:Key>Urgency</m:Key>
+                        <m:Value>8bbab642-1df3-11de-bcd5-0015170f8c09</m:Value>
+                        <m:ValueType>string</m:ValueType>
+                    </m:Fields>
+                    <m:Fields>
+                        <m:Key>Weight</m:Key>
+                        <m:Value>2</m:Value>
+                        <m:ValueType>float</m:ValueType>
+                    </m:Fields>
+                    <m:Fields>
+                        <m:Key>Qty</m:Key>
+                        <m:Value>1</m:Value>
+                        <m:ValueType>int</m:ValueType>
+                    </m:Fields>
+                    <m:Fields>
+                        <m:Key>VolumeWeight</m:Key>
+                        <m:Value></m:Value>
+                        <m:ValueType>float</m:ValueType>
+                    </m:Fields>
+                    <m:Fields>
+                        <m:Key>Volume</m:Key>
+                        <m:Value></m:Value>
+                        <m:ValueType>float</m:ValueType>
+                    </m:Fields>
+                    <m:Fields>
+                        <m:Key>DeliveryType</m:Key>
+                        <m:Value>ДоставкаДоДверей</m:Value>
+                        <m:ValueType>decimal</m:ValueType>
+                    </m:Fields>
+                    <m:Fields>
+                        <m:Key>DeclaredValueRate</m:Key>
+                        <m:Value>0</m:Value>
+                        <m:ValueType>float</m:ValueType>
+                    </m:Fields>
+                    <m:Fields>
+                        <m:Key>InsuranceRate</m:Key>
+                        <m:Value>0</m:Value>
+                        <m:ValueType>float</m:ValueType>
+                    </m:Fields>
+                    </m:List>
+                </m:data>
+                <m:parameters>
+                    <m:Key>Parameters</m:Key>
+                </m:parameters>
+            </m:Calc>
+        </soap:Body>
+        </soap:Envelope>
+<-------------------------------------------ANSWER------------------------------------------->
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<m:CalcResponse xmlns:m="http://www.cargo3.ru">
+			<m:return xmlns:xs="http://www.w3.org/2001/XMLSchema"
+					xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+				<m:Key>Calc</m:Key>
+				<m:List>
+					<m:Key>Destination</m:Key>
+					<m:Properties>
+						<m:Key>Error</m:Key>
+						<m:Value xsi:type="xs:boolean">true</m:Value>
+						<m:ValueType>boolean</m:ValueType>
+						<m:List>
+							<m:Key>Description</m:Key>
+							<m:Value xsi:type="xs:string">05051</m:Value>
+							<m:ValueType>string</m:ValueType>
+							<m:List>
+								<m:Key>Info</m:Key>
+								<m:Value xsi:type="xs:string"/>
+								<m:ValueType>string</m:ValueType>
+							</m:List>
+						</m:List>
+					</m:Properties>
+				</m:List>
+			</m:return>
+		</m:CalcResponse>
+	</soap:Body>
+</soap:Envelope>

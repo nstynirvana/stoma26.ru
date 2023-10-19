@@ -1,0 +1,545 @@
+RewriteBase /
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !\.xml
+#RewriteCond %{REQUEST_URI} !(.*)/$
+#RewriteRule ^(.*[^/])$ $1/ [L,R=301]
+
+
+Options -Indexes 
+ErrorDocument 404 /404.php
+
+<IfModule mod_php.c>
+  php_flag session.use_trans_sid off
+</IfModule>
+
+<IfModule mod_php7.c>
+  php_flag session.use_trans_sid off
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
+  RewriteEngine On
+
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  RewriteCond %{THE_REQUEST} ^.*/index.php
+  RewriteRule ^(.*)index.php$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L] 
+
+  RewriteCond %{THE_REQUEST} ^.*/index.html
+  RewriteRule ^(.*)index.html$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  RewriteCond %{REQUEST_URI} !(.*)/$
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !\..+$
+  RewriteCond %{REQUEST_URI} ^(.+)$
+  RewriteRule ^(.*)$ $1/ [L,R=301]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
+  RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
+  RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+
+  #RewriteCond %{REQUEST_FILENAME} !-f
+  #RewriteCond %{REQUEST_URI} !\..{1,10}$
+  #RewriteCond %{REQUEST_URI} !(.*)/$
+  #RewriteRule ^(.*)$ https://stoma26.ru/$1/ [L,R=301]
+
+
+
+</IfModule>
+
+
+
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresByType image/jpeg "access plus 3 day"
+  ExpiresByType image/gif "access plus 3 day"
+  ExpiresByType image/png "access plus 3 day"
+  ExpiresByType text/css "access plus 3 day"
+  ExpiresByType application/javascript "access plus 3 day"  
+</IfModule>
+
+Redirect 301 /catalog/kalopriemniki/17405-5787-coloplast-alterna-kalopriemnik-zakrytyy-neprozrachnyy-vyrezaemoe-otverstie-10-70mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/17450-5885-coloplast-alterna-kalopriyemnik-otkrytyy-neprozrachnyy-vyrezaemoe-otverstie-10-70-mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/kalopriemnik-otkrytyy-prozrachnyy-alterna-vyrezaemoe-otverstie-10-70-mm-17455-5985/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/17467-8002-coloplast-alterna-kalopriyemnik-detskiy-otkrytyy-neprozrachnyy-vyrezaemoe-otverstie-10-35/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/6100-coloplast-kalopriemnik-otkrytyy-prozrachnyy-vyrezaemoe-otverstie-10-80mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/17500-13870-coloplast-alterna-free-kalopriemnik-otkrytyy-neprozrachnyy-s-myagkim-dvustoronnim-pokryt/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/kalopriemnik-triotsel-5/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/kalopriemnik-abutsel-otkrytyy-s-k-vt-5/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/kalopriemnik-polimernyy-kazan-diametr-40-60-80mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/12800-alterna-kalopriemnik-posleoperatsionyy-ne-sterilnyy-s-oknom-vyrezaemoe-otverstie-10-70mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/19021-sensura-kalopriemnik-posleoperatsionnyy-s-oknom-ne-sterilno-vyrezaemoe-otverstie-10-100mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/12802-alterna-kalopriemnik-posleoperatsioonyy-ne-sterilnyy-s-oknom-vyrezaemoe-otverstie-10-100mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/kalopriemnik-coloplast-6300-otkrytyy-neprozrachnyy-15-60mm-ms-2000/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/1691-1692-1693-coloplast-alterna-meshok-otkrytyy-neprozrachnyy-flanets-40-mm-50-mm-60-mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/17600-coloplast-alterna-stomnyy-meshok-zakrytyy-neprozrachnyy-flanets-40-mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/17601-coloplast-alterna-stomnyy-meshok-zakrytyy-neprozrachnyy-flanets-50-mm/ https://stoma26.ru/catalog/kalopriemniki/ 
+Redirect 301 /catalog/kalopriemniki/1681-1682-1683-coloplast-alterna-stomnyy-meshok-zakrytyy-neprozrachnyy-flanets-40-mm-50-mm-60-mm/ https://stoma26.ru/catalog/kalopriemniki/ 
+Redirect 301 /catalog/kalopriemniki/17602-coloplast-alterna-stomnyy-meshok-zakrytyy-neprozrachnyy-flanets-60-mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/13171-13181-13191-coloplast-alterna-plastina-dlya-dlitelnogo-nosheniya-s-krepleniem-dlya-poyasa-flan/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/13984-13985-13986-coloplast-alterna-free-meshok-otkrytyy-neprozrachnyy-s-myagkim-pokrytiem-i-skrytoy/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/17746-46759-alterna-plastina-konveksnaya-s-krepl-d-poyasa-vyrezaemoe-otverstie-15-33-mm-flanets-50-m/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/elastichnaya-plastina-polukoltso-brava-120700/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/zashchitnoe-koltso-dlya-stomy-brava-coloplast-120425-4-2-mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/6753-plastina-coloplast-mc2002-flantsevoe-soedinenie-50-mm-vyrezaemoe-otverstie-30-45mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/coloplast-mc2002-meshok-otkrytyy-neprozrachnyy-6542-6552-6562/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/6764-plastina-coloplast-mc2002-flantsevoe-soedinenie-60-mm-vyrezaemoe-otverstie-35-55mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/plastina-coloplast-mc2002/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/kalostomnyy-posleoperatsionnyy-meshok-dlya-dvukhkomponentnoy-sistemy-coloplast-prozrachnyy-6818/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/plastina-alterna-s-krepleniem-dlya-poyasa-ekstra-adgeziv-2831-2832-2833/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/coloplast-mc2002-posleoperatsionnoe-stomnoe-koltso-plastina-vyrezaemoe-otverstie-10-70mm-10-100mm-68/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /reviews/landshaftnyy-dizayn/ https://stoma26.ru/reviews/
+Redirect 301 /payment/ https://stoma26.ru/payments/
+Redirect 301 /news/ https://stoma26.ru/
+Redirect 301 /catalog/discount/ https://stoma26.ru/catalog/
+Redirect 301 /shipping/ https://stoma26.ru/delivery/
+Redirect 301 /catalog/saleleader/ https://stoma26.ru/catalog/
+Redirect 301 /reviews/obzory-elektroinstrumenta/ https://stoma26.ru/articles/
+Redirect 301 /help/ https://stoma26.ru/
+Redirect 301 /catalog/malye-sredstva-reabilitatsii/ustroystvo-dlya-zastegivaniya-pugovits-armed/ https://stoma26.ru/catalog/sredstva-maloy-reabilitatsii/ustroystvo-dlya-zastegivaniya-pugovits-armed/
+Redirect 301 /error_js.php https://stoma26.ru/
+Redirect 301 /reviews/testovyy-sovet/ https://stoma26.ru/reviews/
+Redirect 301 /catalog/podguzniki-pelenki/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/televizory/96/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/avtotovary/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/navigatsiya/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/videoregistratory/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/foto-i-videokamery/aksessuary-dlya-fotoapparatov/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/fotovspyshki/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/obektivy/ https://stoma26.ru/catalog/ 
+Redirect 301 /catalog/foto-i-videokamery/fotoapparaty/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/foto-i-videokamery/zerkalnye-fotoapparaty/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/konditsionery/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/noutbuki-kompyutery-i-programmnoe-obespechenie/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/aksessuary-dlya-noutbukov/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/aksessuary-dlya-noutbukov/sistemy-okhlazhdeniya/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/aksessuary-dlya-noutbukov/sumki-i-chekhly/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/monobloki/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/noutbuki/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/programmnoe-obespechenie/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/videokamery/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/rasprodazha-tovarov-dlya-lezhachikh-bolnykh/meshok-senshura-klik-nedrenir-neprozr-fl-40mm/ https://stoma26.ru/catalog/ 
+Redirect 301 /catalog/katetery-urologicheskie/katetery-dlya-samokateterizatsii-lubritsirovannye-nelaton-m8-2-7mm-dl-400/ https://stoma26.ru/catalog/katetery-urologicheskie/
+Redirect 301 /catalog/odnokomponentnye-kalopriemniki/kalopriemnik-abutsel-otkrytyy-s-k-vt-5/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/17602-coloplast-alterna-stomnyy-meshok-zakrytyy-neprozrachnyy-flanets-60-mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/17600-coloplast-alterna-stomnyy-meshok-zakrytyy-neprozrachnyy-flanets-40-mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/odnokomponentnye-kalopriemniki/17500-13870-coloplast-alterna-free-kalopriemnik-otkrytyy-neprozrachnyy-s-myagkim-dvustoronnim-pokryt/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/odnokomponentnye-kalopriemniki/12802-alterna-kalopriemnik-posleoperatsioonyy-ne-sterilnyy-s-oknom-vyrezaemoe-otverstie-10-100mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /promotions/ https://stoma26.ru/
+Redirect 301 /warranty/ https://stoma26.ru/ 
+Redirect 301 /catalog/newproduct/ https://stoma26.ru/catalog/
+Redirect 301 /about/employees/ https://stoma26.ru/
+Redirect 301 /catalog/odnokomponentnye-kalopriemniki/12800-alterna-kalopriemnik-posleoperatsionyy-ne-sterilnyy-s-oknom-vyrezaemoe-otverstie-10-70mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/plastina-alterna-s-krepleniem-dlya-poyasa-ekstra-adgeziv-2831-2832-2833/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/odnokomponentnye-kalopriemniki/17405-5787-coloplast-alterna-kalopriemnik-zakrytyy-neprozrachnyy-vyrezaemoe-otverstie-10-70mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /vendors/ooo-nauchno-proizvodstvennoe-predpriyatie-progress/ https://stoma26.ru/vendors/ooo-npp-progress/
+Redirect 301 /credit/ https://stoma26.ru/
+Redirect 301 /catalog/uropriemniki/ https://stoma26.ru/catalog/mochepriemniki/
+Redirect 301 /reviews/sovety-po-remontu-i-stroitelstvu/ https://stoma26.ru/reviews/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoi/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/polukoltso-adgezivnoe-sofal-10-sht/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/polukoltso-adgezivnoe-sofal-10-sht/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/comfeel-ochistitel-klinzer-dlya-kozhi-180ml/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/comfeel-ochistitel-klinzer-dlya-kozhi-180ml/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/elastichnaya-plastina-polukoltso-brava/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/elastichnaya-plastina-polukoltso-brava/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/krem-zashchitnyy-comfeel-60-ml-dlya-zashchity-kozhi-vokrug-stomy/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/krem-zashchitnyy-comfeel-60-ml-dlya-zashchity-kozhi-vokrug-stomy/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/alterna-poyas-dlya-kalopriemnikov-i-uropriemnikov/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/alterna-poyas-dlya-kalopriemnikov-i-uropriemnikov/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/coloplast-pudra-absorbiruyushchaya-flakon-25g/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/coloplast-pudra-absorbiruyushchaya-flakon-25g/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/analnyy-tampon-peristeen-bolshoy-diametr-45-mm-20-sht/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/analnyy-tampon-peristeen-bolshoy-diametr-45-mm-20-sht/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/plenka-zashchitnaya-konvatek-siless-dlya-ukhoda-za-kozhey-sprey-50-ml-1/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/plenka-zashchitnaya-konvatek-siless-dlya-ukhoda-za-kozhey-sprey-50-ml-1/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/salfetki-zashchitnye-konvakea/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/salfetki-zashchitnye-konvakea/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/pasta-stomageziv-zashchitnyy-barer-i-napolnitel-60-g/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/pasta-stomageziv-zashchitnyy-barer-i-napolnitel-60-g/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/analnyy-tampon-peristeen-malyy-diametr-37-mm-20-sht/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/analnyy-tampon-peristeen-malyy-diametr-37-mm-20-sht/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/poyas-binatsel-dlya-dopolnitelnoy-fiksatsii-sistem-dvukhkomponentnykh/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/poyas-binatsel-dlya-dopolnitelnoy-fiksatsii-sistem-dvukhkomponentnykh/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/ochistitel-dlya-kozhi-comfeel-salfetki-coloplast-v-up-30-sht-/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/ochistitel-dlya-kozhi-comfeel-salfetki-coloplast-v-up-30-sht-/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/coloplast-mc2002-meshok-otkrytyy-neprozrachnyy-6542-6552-6562/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/katetery-urologicheskie/katetery-dlya-samokateterizatsii-lubritsirovannye-nelaton-m12-4-0mm-dl-400/ https://stoma26.ru/catalog/katetery-urologicheskie/
+Redirect 301 /about/awards/ https://stoma26.ru/about/ 
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/coloplast-mc2002-posleoperatsionnoe-stomnoe-koltso-plastina-vyrezaemoe-otverstie-10-70mm-10-100mm-68/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/odnokomponentnye-kalopriemniki/17450-5885-coloplast-alterna-kalopriyemnik-otkrytyy-neprozrachnyy-vyrezaemoe-otverstie-10-70-mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/odnokomponentnye-kalopriemniki/6100-coloplast-kalopriemnik-otkrytyy-prozrachnyy-vyrezaemoe-otverstie-10-80mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /about/history/ https://stoma26.ru/about/
+Redirect 301 /about/vacancies/ https://stoma26.ru/about/
+Redirect 301 /catalog/odnokomponentnye-kalopriemniki/kalopriemnik-otkrytyy-prozrachnyy-alterna-vyrezaemoe-otverstie-10-70-mm-17455-5985/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /about/partners/ https://stoma26.ru/about/
+Redirect 301 /about/responses/ https://stoma26.ru/about/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/1691-1692-1693-coloplast-alterna-meshok-otkrytyy-neprozrachnyy-flanets-40-mm-50-mm-60-mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/17746-46759-alterna-plastina-konveksnaya-s-krepl-d-poyasa-vyrezaemoe-otverstie-15-33-mm-flanets-50-m/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/katetery-urologicheskie/katetery-dlya-samokateterizatsii-lubritsirovannye-nelaton-m16-5-3mm-dl-400/ https://stoma26.ru/catalog/katetery-urologicheskie/easicath-katetery-dlya-samokateterizatsii-lubritsirovannye-nelaton-m16-5-3mm-dl-400/
+Redirect 301 /catalog/odnokomponentnye-kalopriemniki/kalopriemnik-coloplast-6300-otkrytyy-neprozrachnyy-15-60mm-ms-2000/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/110/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/100/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/102/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/106/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/105/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/95/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/111/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/113/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/104/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/108/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/101/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/109/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/98/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/alterna-plastiny-konveksnye-s-krepleniyami-dlya-poyasa-flanets-50-mm/ https://stoma26.ru/catalog/kalopriemniki/alterna-plastiny-konveksnye-s-krepleniyami-dlya-poyasa-flanets-50-mm/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/alterna-plastiny-ploskie-s-krepleniyami-dlya-poyasa-40-mm/ https://stoma26.ru/catalog/kalopriemniki/alterna-plastiny-ploskie-s-krepleniyami-dlya-poyasa-40-mm/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/alterna-stomnye-meshki-dreniruemye-neprozrachnye-flanets-60-mm/ https://stoma26.ru/catalog/kalopriemniki/alterna-stomnye-meshki-dreniruemye-neprozrachnye-flanets-60-mm/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/ileostomnyy-dreniruemyy-meshok-kombigeziv-2s-57-mm/ https://stoma26.ru/catalog/kalopriemniki/ileostomnyy-dreniruemyy-meshok-kombigeziv-2s-57-mm/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/plastina-oblegchennaya-kombigeziv-2s-57-mm/ https://stoma26.ru/catalog/kalopriemniki/plastina-oblegchennaya-kombigeziv-2s-57-mm/
+Redirect 301 /catalog/kalopriemniki-detskie/kalopriemnik-detskiy-triotsel-d/ https://stoma26.ru/catalog/kalopriemniki/kalopriemnik-detskiy-triotsel-d/
+Redirect 301 /catalog/odnokomponentnye-kalopriemniki/coloplast-alterna-odnokomponen-kalopriemniki-drenir-neprozr-otv-10-70mm/ https://stoma26.ru/catalog/kalopriemniki/coloplast-alterna-odnokomponen-kalopriemniki-drenir-neprozr-otv-10-70mm/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/alterna-stomnye-meshki-dreniruemye-neprozrachnye-flanets-50-mm/ https://stoma26.ru/catalog/kalopriemniki/alterna-stomnye-meshki-dreniruemye-neprozrachnye-flanets-50-mm/
+Redirect 301 /catalog/odnokomponentnye-kalopriemniki/odnokomponentnyy-dreniruemyy-kalopriemnik-so-vstroennoy-plastinoy-ileostomnoy-stomadress-plyus-19-64/ https://stoma26.ru/catalog/kalopriemniki/odnokomponentnyy-dreniruemyy-kalopriemnik-so-vstroennoy-plastinoy-ileostomnoy-stomadress-plyus-19-64/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/ileostomnyy-dreniruemyy-meshok-kombigeziv-2s-45-mm/ https://stoma26.ru/catalog/kalopriemniki/ileostomnyy-dreniruemyy-meshok-kombigeziv-2s-45-mm/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/alterna-plastiny-konveksnye-s-krepleniyami-dlya-poyasa-flanets-60-mm/ https://stoma26.ru/catalog/kalopriemniki/alterna-plastiny-konveksnye-s-krepleniyami-dlya-poyasa-flanets-60-mm/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/alterna-plastiny-ploskie-s-krepleniyami-dlya-poyasa-60-mm/ https://stoma26.ru/catalog/kalopriemniki/alterna-plastiny-ploskie-s-krepleniyami-dlya-poyasa-60-mm/
+Redirect 301 /reviews/ https://stoma26.ru/articles/
+Redirect 301 /reviews/landshaftnyy-dizayn/ https://stoma26.ru/articles/
+Redirect 301 /reviews/obzory-elektroinstrumenta/ https://stoma26.ru/articles/
+Redirect 301 /reviews/sovety-po-remontu-i-stroitelstvu/ https://stoma26.ru/articles/
+Redirect 301 /articles/index2.php https://stoma26.ru/articles/
+Redirect 301 /articles/vidy-kalopriyemnikov/ https://stoma26.ru/articles/?ELEMENT_ID=762
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/17601-coloplast-alterna-stomnyy-meshok-zakrytyy-neprozrachnyy-flanets-50-mm/ https://stoma26.ru/catalog/dvukhkomponentnye-kalopriemniki/
+Redirect 301 /articles/detail/762/ https://stoma26.ru/articles/
+Redirect 301 /catalog/compare/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/103/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/ukhod-za-stomoy-kalopriemniki/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/odnokomponentnye-kalopriemniki/kalopriemnik-triotsel-5/ https://stoma26.ru/catalog/odnokomponentnye-kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/test/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/uropriemniki/mochepriemniki-nozhnye/ https://stoma26.ru/catalog/mochepriemniki-nozhnye/
+Redirect 301 /catalog/uropriemniki/mochepriemniki-prikrovatnye/ https://stoma26.ru/catalog/mochepriemniki-prikrovatnye/
+Redirect 301 /catalog/uropriemniki/mochepriemnik-nosimyy-nozhnoy-mederen-750-ml-trubka-50-sm/ https://stoma26.ru/catalog/mochepriemniki/mochepriemnik-nosimyy-nozhnoy-mederen-750-ml-trubka-50-sm/
+Redirect 301 /catalog/uropriemniki/coloplast-conveen-basic-mochepriemnik-prikrovatnyy-obem-2000ml-trubka-100-sm/ https://stoma26.ru/catalog/mochepriemniki/coloplast-conveen-basic-mochepriemnik-prikrovatnyy-obem-2000ml-trubka-100-sm/
+Redirect 301 /catalog/uropriemniki/conveen-mochepriemnik-nozhnoy-security-750-ml-trubka-50-sm/ https://stoma26.ru/catalog/mochepriemniki/conveen-mochepriemnik-nozhnoy-security-750-ml-trubka-50-sm/
+Redirect 301 /catalog/uropriemniki/remni-dlya-krepleniya-mochepriemnikov/ https://stoma26.ru/catalog/mochepriemniki/remni-dlya-krepleniya-mochepriemnikov/
+Redirect 301 /catalog/uropriemniki/remni-dlya-krepleniya-nozhnykh-meshkov-mochepriemnikov/ https://stoma26.ru/catalog/mochepriemniki/remni-dlya-krepleniya-nozhnykh-meshkov-mochepriemnikov/
+Redirect 301 /catalog/podguzniki-pelenki/pelenki-detskie-gigienicheskie-bella-baby-happy-90kh60-po-10-sht/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/pelenki-detskie-gigienicheskie-bella-baby-happy-90kh60-po-10-sht/
+Redirect 301 /catalog/podguzniki-pelenki/podguzniki-dlya-vzroslykh-seni-standard-large-30-sht/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/podguzniki-dlya-vzroslykh-seni-standard-large-30-sht/
+Redirect 301 /catalog/podguzniki-pelenki/podguzniki-dlya-vzroslykh-seni-standard-xl-extra-large-30-sht/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/podguzniki-dlya-vzroslykh-seni-standard-xl-extra-large-30-sht/
+Redirect 301 /catalog/podguzniki-pelenki/podguzniki-dlya-vzroslykh-tena-slip-original-l-100-150-sm-30-sht/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/podguzniki-dlya-vzroslykh-tena-slip-original-l-100-150-sm-30-sht/
+Redirect 301 /catalog/podguzniki-pelenki/pelenki-dailee-60kh90-60-kh-90-sm-30-sht/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/pelenki-dailee-60kh90-60-kh-90-sm-30-sht/
+Redirect 301 /catalog/podguzniki-pelenki/podguzniki-dlya-vzroslykh-seni-standard-medium-30-sht/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/podguzniki-dlya-vzroslykh-seni-standard-medium-30-sht/
+Redirect 301 /catalog/podguzniki-pelenki/podguzniki-dlya-vzroslykh-tena-slip-original-m-70-120-sm-30-sht/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/podguzniki-dlya-vzroslykh-tena-slip-original-m-70-120-sm-30-sht/
+Redirect 301 /catalog/podguzniki-pelenki/podguzniki-dlya-vzroslykh-seni-standard-small-30-sht/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/podguzniki-dlya-vzroslykh-seni-standard-small-30-sht/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoi/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/
+Redirect 301 /catalog/kalopriemniki/125135-dvukhkomponentnyy-dreniruemyy-kalopriemnik-v-komplekte-adgezivnaya-plastina-ploskaya-oblegche/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/174500-odnokomponentnyy-drenir-kalopr-so-vstroennymi-ploskimi-plast-neprozrachnyy-otv-10-70mm-b/ https://stoma26.ru/catalog/kalopriemniki/coloplast-alterna-odnokomponentnyy-kalopriemnik-dreniruemyy-neprozrachnyy-10-70mm/
+Redirect 301 /catalog/kalopriemniki/176210-stomnye-meshki-dr-nepr-fl-50mm-bolshie-coloplast/ https://stoma26.ru/catalog/kalopriemniki/alterna-stomnye-meshki-dreniruemye-neprozrachnye-flanets-50-mm/
+Redirect 301 /catalog/kalopriemniki/176220-stomnye-meshki-dreniruemye-neprozrachnye-flanets-60/ https://stoma26.ru/catalog/kalopriemniki/alterna-stomnye-meshki-dreniruemye-neprozrachnye-flanets-60-mm/
+Redirect 301 /catalog/kalopriemniki/177010-plastiny-ploskie-s-krepl-dlya-poyasa-uropr-fl-40-mm-otv-10-35mm-coloplast/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/177060-plastiny-ploskie-s-krepleniem-dlya-poyasa-uropriemnika-flanets-50-mm-otv-10-45mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/177100-plastiny-ploskie-s-krepleniem-dlya-poyasa-flanets-60mm/ https://stoma26.ru/catalog/kalopriemniki/alterna-plastiny-ploskie-s-krepleniyami-dlya-poyasa-60-mm/
+Redirect 301 /catalog/kalopriemniki/177460-dvukhkomponentnyy-drenir-kalopr-v-komplekte-adgezivnaya-pl-konv-fl-50mm-otv-15-33-deep/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/177630-plastina-konveksn-alterna-coloplast-fl-60mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/400974-dvukhkomponentnyy-dreniruemyy-kalopriemnik-v-kompl-ileostomnye-kombigeziv-2s-c-zazhimom-10/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/400975-dvukhkomponentnyy-dren-kombigeziv-2s-s-zazhimom-standartnye-neprozrachnye-57-mm-10/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/kalopriemniki/420590-odnokomponentnyy-dreniruemyy-kalopriemnik-so-vstroennoy-pl-ileostomnyy-stomadressplyus-19/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/katetery-urologicheskie/053480-kateter-dlya-samokateterizatsii-lubritsirovannyy-m8-2-7mm-dl-400-easl-cath/ https://stoma26.ru/catalog/katetery-urologicheskie/
+Redirect 301 /catalog/katetery-urologicheskie/053520-kateter-dlya-samokateterizatsii-lubritsirovannyy-m12-4-0-mm-dl-400easl-cath-/ https://stoma26.ru/catalog/katetery-urologicheskie/
+Redirect 301 /catalog/katetery-urologicheskie/053560-kateter-dlya-samokateterizatsii-lubritsirovannyy-m16-5-3mm-dl-400/ https://stoma26.ru/catalog/katetery-urologicheskie/
+Redirect 301 /catalog/katetery-urologicheskie/280080-nabory-mochepr-dlya-samokateterizatsii-meshok-mochepriemnik-kateter-lubr-m14-4-7mm-ob-700/ https://stoma26.ru/catalog/katetery-urologicheskie/
+Redirect 301 /catalog/katetery-urologicheskie/284120-katetery-cpeedicath-zhenskie-12-4/ https://stoma26.ru/catalog/katetery-urologicheskie/
+Redirect 301 /catalog/meditsinskie-sredstva-dezinfektsii/meditsinskaya-maska-odnorazovaya-17-5-9-5/ https://stoma26.ru/catalog/meditsinskie-sredstva-dezinfektsii/
+Redirect 301 /catalog/podguzniki-pelenki/448/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-bolnymi/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/
+Redirect 301 /catalog/odnokomponentnye-kalopriemniki/19021-sensura-kalopriemnik-posleoperatsionnyy-s-oknom-ne-sterilno-vyrezaemoe-otverstie-10-100mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/malye-sredstva-reabilitatsii/ https://stoma26.ru/catalog/sredstva-maloy-reabilitatsii/
+Redirect 301 /catalog/odnokomponentnye-urostomnye-meshki/ https://stoma26.ru/catalog/mochepriemniki/
+Redirect 301 /catalog/dvukhkomponentnye-urostomnye-meshki/ https://stoma26.ru/catalog/mochepriemniki/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/molicare-mobile-super-trusy-pri-nederzhanii-4-kapli-14-sht-/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/katetery-urologicheskie/053700-kateter-dlya-samokateterizatsii-lubritsirovannyy-zh10-3-3mm/ https://stoma26.ru/catalog/katetery-urologicheskie/
+Redirect 301 /catalog/mochepriemniki/051670-mochepriemnik-nozhnoy-trubka-50sm-750-ml-conveen/ https://stoma26.ru/catalog/mochepriemniki-nozhnye/
+Redirect 301 /catalog/mochepriemniki/062512-remni-dlya-krepleniya-mochepriemnikov/ https://stoma26.ru/catalog/mochepriemniki/
+Redirect 301 /catalog/mochepriemniki/218040-mochepriemnik-prikrovatnyy-trubka-100sm-2000ml-/ https://stoma26.ru/catalog/mochepriemniki-prikrovatnye/
+Redirect 301 /catalog/mochepriemniki/301018-remni-dlya-krepleniya-mochepriemnikov/ https://stoma26.ru/catalog/mochepriemniki/ 
+Redirect 301 /catalog/mochepriemniki/mochepriemnik-nozhnoy-mederen-750-ml-kitay/ https://stoma26.ru/catalog/mochepriemniki-nozhnye/ 
+Redirect 301 /catalog/mochepriemniki/vogt-medical-mochepriemnik-odnorazov-ob-1000-ml-prikr-ster-s-t-obraznym-slivom-trubka-90sm/ https://stoma26.ru/catalog/mochepriemniki/ 
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomaoy/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/podguzniki-dlya-vzroslykh-seni-standard-air-razmer-xl/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/podguzniki-pelenki/podguzniki-dlya-vzroslykh-seni-standard-air-razmer-xl/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/katetery-urologicheskie/053720-kateter-dlya-samokateterizatsii-lubritsirovannyy-zh12-4-0mm-dl-200mm/ https://stoma26.ru/catalog/katetery-urologicheskie/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/podguzniki-tena-slip-razmer-m/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/podguzniki-pelenki/podguzniki-tena-slip-razmer-m/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/4715-salfetki-ochistitel-dlya-kozhi-comfeel/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/ochistitel-dlya-kozhi-comfeel-salfetki-coloplast-v-up-30-sht-/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/pelenki-dailee-bed-60-90/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/pelenki-dailee-60kh90-60-kh-90-sm-30-sht/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/pelenki-detskie-bella-baby-happy-90kh60/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/pelenki-detskie-gigienicheskie-bella-baby-happy-90kh60-po-10-sht/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/019070-pudra-absorbiruyushchaya-coloplast/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/coloplast-pudra-absorbiruyushchaya-flakon-25g/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/183910-pasta-stomageziv-60-g-1/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/pasta-stomageziv-zashchitnyy-barer-i-napolnitel-60-g/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/podguzniki-dlya-vzroslykh-seni-standard-air-razmer-l-/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/podguzniki-seni-standard-air-razmer-m/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/podguzniki-seni-standard-air-razmer-s/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/podguzniki-super-seni-razmer-m/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/podguzniki-tena-slip-razmer-l/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/004210-poyas-dlya-kalopriemnikov-i-uropriemnikov-alterna/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/alterna-poyas-dlya-kalopriemnikov-i-uropriemnikov/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/014500-analnyy-tampon-37mm/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/analnyy-tampon-peristeen-malyy-diametr-37-mm-20-sht/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/014510-analnyy-tampon-diametr-45mm-peristeen/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/analnyy-tampon-peristeen-bolshoy-diametr-45-mm-20-sht/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/120700-elastichnaya-plastina-polukoltso-brava-coloplast/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/elastichnaya-plastina-polukoltso-brava/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/37444-zashchitnaya-plenka-v-forme-salfetok-salfetki-konvakeya-zashchitnye-100/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/salfetki-zashchitnye-konvakea/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/4710-ochistitel-dlya-kozhi-vo-flakone-ne-menee-180ml/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/comfeel-ochistitel-klinzer-dlya-kozhi-180ml/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/4720-krem-zashchitnyy-comfeel-60-ml/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/krem-zashchitnyy-comfeel-60-ml-dlya-zashchity-kozhi-vokrug-stomy/ 
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/polukoltso-sofal-/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/polukoltso-adgezivnoe-sofal-10-sht/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/poyas-binatsel-dlya-mochepriemnikov/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/poyas-binatsel-dlya-dopolnitelnoy-fiksatsii-sistem-dvukhkomponentnykh/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/tr104-plenka-zashchitnaya-konvatek-siless-dlya-ukhoda-za-kozhey-sprey-50-ml-1/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/plenka-zashchitnaya-konvatek-siless-dlya-ukhoda-za-kozhey-sprey-50-ml-1/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/014500-analnyy-tampon-37mm/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/analnyy-tampon-peristeen-malyy-diametr-37-mm-20-sht/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/014510-analnyy-tampon-diametr-45mm-peristeen/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/analnyy-tampon-peristeen-bolshoy-diametr-45-mm-20-sht/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/tr104-plenka-zashchitnaya-konvatek-siless-dlya-ukhoda-za-kozhey-sprey-50-ml-1/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/plenka-zashchitnaya-konvatek-siless-dlya-ukhoda-za-kozhey-sprey-50-ml-1/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/poyas-binatsel-dlya-mochepriemnikov/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/poyas-binatsel-dlya-dopolnitelnoy-fiksatsii-sistem-dvukhkomponentnykh/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/polukoltso-sofal-/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/polukoltso-adgezivnoe-sofal-10-sht/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/4720-krem-zashchitnyy-comfeel-60-ml/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/krem-zashchitnyy-comfeel-60-ml-dlya-zashchity-kozhi-vokrug-stomy/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/4710-ochistitel-dlya-kozhi-vo-flakone-ne-menee-180ml/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/comfeel-ochistitel-klinzer-dlya-kozhi-180ml/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/37444-zashchitnaya-plenka-v-forme-salfetok-salfetki-konvakeya-zashchitnye-100/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/salfetki-zashchitnye-konvakea/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/120700-elastichnaya-plastina-polukoltso-brava-coloplast/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/elastichnaya-plastina-polukoltso-brava/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/polukoltso-sofal-/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/polukoltso-adgezivnoe-sofal-10-sht/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/podguzniki-dyshashchie-super-seni-trio-air-small-10sht/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/mochepriemniki/kateter-foleya-lateksnyy-s-silikonovym-pokrytiem-dvukhkhodovoy-mederen/ https://stoma26.ru/catalog/katetery-urologicheskie/
+Redirect 301 /catalog/mochepriemniki/kateter-foleya-3-kh-khodovoy-apexmed-ch-fr-12-26-/ https://stoma26.ru/catalog/katetery-urologicheskie/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/448/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/podguzniki_dlya_vzroslykh/441/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/podguzniki_dlya_vzroslykh/435/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/podguzniki_dlya_vzroslykh/446/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stoma/podguzniki_dlya_vzroslykh/449/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/449/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/mochepriemniki/plastina-sensura-click-xpro-plastina-konveksnaya-vyrezaemoe-otverstie-15-23-mm-flanets-40mm/ https://stoma26.ru/catalog/mochepriemniki/
+Redirect 301 /bittrix/ https://stoma26.ru/
+Redirect 301 /catalog/security-uroprezervativ-odnokomponentnyy-samokleyashchiysya-bezlateksnyy-diametr-35-mm/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/katetery-urologicheskie/285100-katetery-speedicath-zhenskie-10-3/ https://stoma26.ru/catalog/katetery-urologicheskie/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/salfetki-vlazhnye-ochishchayushchie-64sht-up-id-care/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/
+Redirect 301 /catalog/mochepriemniki/kateter-nelatona-aquacath-s-gidrofilnym-pokrytiem-ch-fr-8-16/ https://stoma26.ru/catalog/katetery-urologicheskie/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/podguzniki-dyshashchie-super-seni-trio-air-medium-10sht/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/podguzniki-super-seni-10-sht/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/krem-tena-barer-obem-150-ml/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/podguzniki-trusy-tena-pants-normal-10/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/vlazhnye-ochishchayushchie-salfetki-hartmann-menalind-professional-molicare-skin-50sht/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/podguzniki-dlya-vzroslykh-tena-slip-plyus-30-/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/kalopriemniki-koloplast/ https://stoma26.ru/catalog/kalopriemniki-coloplast/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/urologicheskie-trusiki-molimed-pants-active-medium-12sht/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/pasta-germetik-dlya-stomy-45gr-abutsel/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/vpityvayushchie-trusiki-dlya-vzroslykh-seni-active-10-sht-/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/
+Redirect 301 /catalog/kalopriemniki/coloplast-alterna-odnokomponen-kalopriemniki-drenir-neprozr-otv-10-70mm/ https://stoma26.ru/catalog/kalopriemniki/coloplast-alterna-odnokomponentnyy-kalopriemnik-dreniruemyy-neprozrachnyy-10-70mm/
+Redirect 301 /catalog/mochepriemniki/17701-17706-17710-1771-1776-1779-coloplast-alterna-plastina-s-krepleniem-dlya-poyasa-flanets-40-mm-5/ https://stoma26.ru/catalog/kalopriemniki/alterna-plastiny-ploskie-s-krepleniyami-dlya-poyasa-40-mm/
+Redirect 301 /catalog/mochepriemniki/453/ https://stoma26.ru/catalog/mochepriemniki/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/pelenki-detskie-gigienicheskie-bella-baby-heppy-90kh60-po-10-sht/ https://stoma26.ru/catalog/podguzniki-dlya-vzroslykh/pelenki-detskie-gigienicheskie-bella-baby-happy-90kh60-po-10-sht/
+Redirect 301 /catalog/katetery-urologicheskie/280090-easicath-nabory-mochepriemniki-dlya-samokaterizatsii-nelaton-m16-5-3mm/ https://stoma26.ru/catalog/katetery-urologicheskie/nabor-easicath-set-kateter-uretralnyy-lubritsirovannyy-dlya-periodicheskoy-samokateterizatsii-m16/
+Redirect 301 /catalog/mochepriemniki/187/ https://stoma26.ru/catalog/mochepriemniki/
+Redirect 301 /catalog/mochepriemniki/meshok-urostomnyy-coloplast-dreniruemyy-prozrachnyy-flanets-50-mm-uro2002-art-4250/ https://stoma26.ru/catalog/mochepriemniki/
+Redirect 301 /catalog/kalopriemniki/coloplast-alterna-free-kalopriemnik-konveksnyy-otkrytyy-neprozr-15-43-mm/ https://stoma26.ru/catalog/kalopriemniki/coloplast-alterna-free-kalopriemnik-konveksnyy-otkrytyy-neprozrachnyy-15-43-mm/
+Redirect 301 /catalog/test/ https://stoma26.ru/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/podguzniki_dlya_vzroslykh/441/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/
+Redirect 301 /catalog/kalopriemniki/175110-kalopriemnik-alterna-free-odnok-dren-15-43mm/ https://stoma26.ru/catalog/kalopriemniki/coloplast-alterna-free-kalopriemnik-konveksnyy-otkrytyy-neprozrachnyy-15-43-mm/
+Redirect 301 /catalog/ortopedicheskie-izdeliya/trost-metallicheskaya-reguliruemaya-po-vysote-mnogoopornaya-na-4-ch-oporakh-na-nizkoy-platforme-khom/ https://stoma26.ru/catalog/trost-opornaya/trost-metallicheskaya-reguliruemaya-po-vysote-mnogoopornaya-na-4-ch-oporakh-na-nizkoy-platforme-khom/
+Redirect 301 /catalog/ortopedicheskie-izdeliya/kostyl-s-podlokotnikom-i-ustroystvom-protivoskolzheniya-khomut-art-26u/ https://stoma26.ru/catalog/kostyl-opornyy/kostyl-s-podlokotnikom-i-ustroystvom-protivoskolzheniya-khomut-art-26u/
+Redirect 301 /catalog/ortopedicheskie-izdeliya/14-527-tk-trost-metallicheskaya-taktilnaya-s-ruchkoy-tipa-klyuka/ https://stoma26.ru/catalog/trost-opornaya/14-527-tk-trost-metallicheskaya-taktilnaya-s-ruchkoy-tipa-klyuka/
+Redirect 301 /catalog/ortopedicheskie-izdeliya/trost-metallicheskaya-alyuminievyy-splav-reguliruemaya-po-vysote/ https://stoma26.ru/catalog/trost-opornaya/trost-metallicheskaya-alyuminievyy-splav-reguliruemaya-po-vysote/
+Redirect 301 /catalog/ortopedicheskie-izdeliya/trost-opornaya-skladnaya-reguliruemaya-po-vysote-s-ups-s-derevyannoy-ruchkoy-khomut/ https://stoma26.ru/catalog/trost-opornaya/trost-opornaya-skladnaya-reguliruemaya-po-vysote-s-ups-s-derevyannoy-ruchkoy-khomut/
+Redirect 301 /catalog/ortopedicheskie-izdeliya/trost-metallicheskaya-taktilnaya-skladnaya/ https://stoma26.ru/catalog/trost-opornaya/trost-metallicheskaya-taktilnaya-skladnaya/
+Redirect 301 /catalog/sredstva-maloy-reabilitatsii/bandazh-posleoperatsionnyy-kreyt-3-chernyy/ https://stoma26.ru/catalog/sredstva-maloy-reabilitatsii/bandazh-posleoperatsionnyy-kreyt-3-chernyy-339-70/
+Redirect 301 /catalog/sredstva-maloy-reabilitatsii/bandazh-posleoperatsionnyy-kreyt-2-chernyy/ https://stoma26.ru/catalog/sredstva-maloy-reabilitatsii/bandazh-posleoperatsionnyy-kreyt-2-chernyy-339-70/
+Redirect 301 /catalog/bandazhi/bandazh-posleoperatsionnyy-kreyt-3-chernyy-339-70/ https://stoma26.ru/catalog/sredstva-maloy-reabilitatsii/bandazh-posleoperatsionnyy-kreyt-3-chernyy-339-70/
+Redirect 301 /catalog/bandazhi/bandazh-posleoperatsionnyy-kreyt-4-chernyy/ https://stoma26.ru/catalog/sredstva-maloy-reabilitatsii/bandazh-posleoperatsionnyy-kreyt-4-chernyy-339-90/
+Redirect 301 /catalog/sredstva-maloy-reabilitatsii/bandazh-posleoperatsionnyy-kreyt-4-belyy/ https://stoma26.ru/catalog/sredstva-maloy-reabilitatsii/bandazh-posleoperatsionnyy-kreyt-4-chernyy-339-90/
+Redirect 301 /catalog/sredstva-maloy-reabilitatsii/bandazh-posleoperatsionnyy-kreyt-5-chernyy/ https://stoma26.ru/catalog/sredstva-maloy-reabilitatsii/bandazh-dlya-loktevogo-sustava-kreyt-5-chernyy/
+Redirect 301 /catalog/sredstva-maloy-reabilitatsii/bandazh-posleoperatsionnyy-kreyt-5-belyy/ https://stoma26.ru/catalog/sredstva-maloy-reabilitatsii/bandazh-posleoperatsionnyy-kreyt-5-belyy-333/
+Redirect 301 /catalog/ortopedicheskie-izdeliya/kostyl-spodlokotnikom-i-ustroystvom-protivoskolzheniya-khomut-art-22/ https://stoma26.ru/catalog/kostyl-opornyy/kostyl-s-podlokotnikom-i-ustroystvom-protivoskolzheniya-khomut-art-26u/
+Redirect 301 /catalog/trost-opornaya/trost-metallicheskaya-alyuminievyy-splav-reguliruemaya-po-vysote/ https://stoma26.ru/catalog/trost-opornaya/
+Redirect 301 /catalog/mochepriemniki-nozhnye/mochepriemnik-750-ml-vogt-medical-s-krestovym-kranom-trubka-30sm-art-1316119/ https://stoma26.ru/catalog/mochepriemniki-prikrovatnye/1316107-mochepriemnik-vm1l-s-krest-kranom-odnorazovyy-sterilnyy-vogt-medical/
+Redirect 301 /catalog/trost-opornaya/trost-metallicheskaya-opornaya-skladnaya-reguliruemaya-s-derevyannoy-ruchkoy-art-22s-der/ https://stoma26.ru/catalog/ortopedicheskie-izdeliya/trost-metallicheskaya-opornaya-skladnaya-reguliruemaya-s-der-ruchkoy-art-22us-der/
+Redirect 301 /catalog/trost-opornaya/trost-metallicheskaya-taktilnaya-skladnaya/ https://stoma26.ru/catalog/ortopedicheskie-izdeliya/06-02-02-0005-trost-metallicheskaya-alyuminievyy-splav-dlya-slepykh-taktilnaya-120sm-14-527-t-120/
+Redirect 301 /catalog/trost-opornaya/trost-metallicheskaya-reguliruemaya-po-vysote-mnogoopornaya-na-3-kh-oporakh-/ https://stoma26.ru/catalog/ortopedicheskie-izdeliya/trost-metallicheskaya-reguliruemaya-po-vysote-mnogoopornaya-na-3-kh-oporakh-khomu-art22-3/
+Redirect 301 /catalog/trost-opornaya/trost-metallicheskaya-alyuminievyy-splav-reguliruemaya-po-vysote-s-ups/ https://stoma26.ru/catalog/ortopedicheskie-izdeliya/trost-opornaya-reguliruemaya-po-vysote-s-ustroystvom-protivoskolzheniya/ 
+Redirect 301 /catalog/trost-opornaya/14-527-tk-trost-metallicheskaya-taktilnaya-s-ruchkoy-tipa-klyuka/ https://stoma26.ru/catalog/ortopedicheskie-izdeliya/trost-met-al-splav-dlya-slepykh-taktilnaya-sruchkoy-klyuka-120sm-art14-527-tk-120/
+Redirect 301 /catalog/trost-opornaya/trost-metallicheskaya-reguliruemaya-po-vysote-mnogoopornaya-na-4-ch-oporakh-na-nizkoy-platforme-khom/ https://stoma26.ru/catalog/ortopedicheskie-izdeliya/trost-metallicheskaya-reguliruemaya-po-vysote-mnogoopornaya-na-4-kh-oporakh-khomut-s-ups-art-22u-4/ 
+Redirect 301 /catalog/katetery-urologicheskie/easicath-katetery-dlya-samokateterizatsii-lubritsirovannye-nelaton-m10-3-3mm-dl-200/ https://stoma26.ru/catalog/katetery-nelatona/
+Redirect 301 /catalog/kompressionnye-chulki_1/ https://stoma26.ru/catalog/kompressionnye-chulki/ 
+Redirect 301 /catalog/bandazhi_1/bandazh-posleoperatsionnyy-kreyt-5-chernyy/ https://stoma26.ru/catalog/bandazhi/bandazh-posleoperatsionnyy-kreyt-5-chernyy/
+Redirect 301 /catalog/bandazhi_1/ https://stoma26.ru/catalog/bandazhi/
+Redirect 301 /catalog/bandazh-na-ruku_1/ https://stoma26.ru/catalog/bandazh-na-ruku/ 
+Redirect 301 /catalog/bandazh-gryzhevoy_1/ https://stoma26.ru/catalog/bandazh-gryzhevoy/
+Redirect 301 /catalog/ortopedicheskie-izdeliya/trost-metallicheskaya-opornaya-skladnaya-reguliruemaya-s-der-ruchkoy-art-22us-der/ https://stoma26.ru/catalog/trost-opornaya/trost-metallicheskaya-opornaya-skladnaya-reguliruemaya-s-der-ruchkoy-art-22us-der/
+Redirect 301 /catalog/ortopedicheskie-izdeliya/trost-opornaya-reguliruemaya-po-vysote-s-ustroystvom-protivoskolzheniya/ https://stoma26.ru/catalog/trost-opornaya/trost-opornaya-reguliruemaya-po-vysote-s-ustroystvom-protivoskolzheniya/
+Redirect 301 /catalog/bandazh-posleoperatsionnyy/ https://stoma26.ru/catalog/bandazh-posleoperatsionnyy-na-bryushnuyu-polost/
+Redirect 301 /catalog/ortopedicheskie-izdeliya/06-02-02-0005-trost-metallicheskaya-alyuminievyy-splav-dlya-slepykh-taktilnaya-120sm-14-527-t-120/ https://stoma26.ru/catalog/trost-opornaya/06-02-02-0005-trost-metallicheskaya-alyuminievyy-splav-dlya-slepykh-taktilnaya-120sm-14-527-t-120/
+Redirect 301 /catalog/ortopedicheskie-izdeliya/trost-metallicheskaya-reguliruemaya-po-vysote-mnogoopornaya-na-3-kh-oporakh-khomu-art22-3/ https://stoma26.ru/catalog/trost-opornaya/trost-metallicheskaya-reguliruemaya-po-vysote-mnogoopornaya-na-3-kh-oporakh-khomu-art22-3/
+Redirect 301 /catalog/ortopedicheskie-izdeliya/trost-met-al-splav-dlya-slepykh-taktilnaya-sruchkoy-klyuka-120sm-art14-527-tk-120/ https://stoma26.ru/catalog/trost-opornaya/trost-dlya-slepykh-taktilnaya-s-ruchkoy-klyuka-120sm-art14-527-tk-120/
+Redirect 301 /catalog/kalopriemniki-odnokomponentnye-dreniruemye-so-vstroennoy-ploskoy-plastinoy/174550-odnokomponentnyy-dreniruemyy-kalopriemnik-so-vstroennoy-ploskoy-plastinoy-prozrachnye-10-70mm/ https://stoma26.ru/catalog/kalopriemniki-odnokomponentnye-dreniruemye-so-vstroennoy-ploskoy-plastinoy/
+Redirect 301 /catalog/trost-opornaya/trost-opornaya-skladnaya-reguliruemaya-po-vysote-s-ups-s-derevyannoy-ruchkoy-khomut/ https://stoma26.ru/catalog/trost-opornaya/22s-der-trost-metallicheskaya-opornaya-skladnaya-reguliruemaya-s-derevyannoy-ruchkoy-/  
+Redirect 301 /catalog/ortopedicheskie-izdeliya/trost-metallicheskaya-reguliruemaya-po-vysote-mnogoopornaya-na-3-kh-oporakh-khomut-s-ustroystvom-pro/ https://stoma26.ru/catalog/trost-opornaya/trost-metallicheskaya-reguliruemaya-po-vysote-mnogoopornaya-na-3-kh-oporakh-khomut-s-ustroystvom-pro/
+
+Redirect 301 catalog/prochee/protivoprolezhnevyy-matras-smart-cell-t01/ https://stoma26.ru/catalog/protivoprolezhnevye-matrasy/protivoprolezhnevyy-matras-smart-cell-t01/
+Redirect 301 catalog/prochee/protivoprolezhnevyy-matras-smart-cell-t05/ https://stoma26.ru/catalog/protivoprolezhnevye-matrasy/protivoprolezhnevyy-matras-smart-cell-t05/
+Redirect 301 catalog/prochee/protivoprolezhnevaya-podushka-soft-line-sl201/ https://stoma26.ru/catalog/protivoprolezhnevye-podushki/protivoprolezhnevaya-podushka-soft-line-sl201/
+Redirect 301 catalog/prochee/protivoprolezhnevaya-podushka-easy-pad-e80/ https://stoma26.ru/catalog/protivoprolezhnevye-podushki/protivoprolezhnevaya-podushka-easy-pad-e80/
+Redirect 301 catalog/prochee/protivoprolezhnevyy-matras-bubble-b03/ https://stoma26.ru/catalog/protivoprolezhnevye-matrasy/protivoprolezhnevyy-matras-bubble-b03/
+Redirect 301 catalog/prochee/protivoprolezhnevyy-matras-bubble-b01/ https://stoma26.ru/catalog/protivoprolezhnevye-matrasy/protivoprolezhnevyy-matras-bubble-b01/
+Redirect 301 catalog/prochee/protivoprolezhnevyy-matras-bubble-b04/ https://stoma26.ru/catalog/protivoprolezhnevye-matrasy/protivoprolezhnevyy-matras-bubble-b04/
+Redirect 301 catalog/prochee/protivoprolezhnevaya-podushka-easy-pad-e90/ https://stoma26.ru/catalog/protivoprolezhnevye-podushki/protivoprolezhnevaya-podushka-easy-pad-e90/
+Redirect 301 catalog/prochee/protivoprolezhnevaya-podushka-comfort/ https://stoma26.ru/catalog/protivoprolezhnevye-podushki/protivoprolezhnevaya-podushka-comfort/
+
+#Редиректы по дублям тайтла 26.10.22.
+Redirect 301 /catalog/khodunki-dlya-invalidov/sredstvo-reabilitatsii-invalidov-khodunki-armed-yu710/ https://stoma26.ru/catalog/khodunki-dlya-invalidov/khodunki-sredstvo-reabilitatsii-invalidov-armed-yu710/
+Redirect 301 /catalog/sredstva-maloy-reabilitatsii/sredstvo-reabilitatsii-invalidov-khodunki-armed-yu710/ https://stoma26.ru/catalog/khodunki-dlya-invalidov/khodunki-sredstvo-reabilitatsii-invalidov-armed-yu710/
+Redirect 301 /catalog/bandazh-dlya-loktevogo-sustava/ https://stoma26.ru/catalog/bandazh-na-loktevoy-sustav/
+Redirect 301 /catalog/sredstva-maloy-reabilitatsii/bandazh-posleoperatsionnyy-b-339-90-kreyt-6-chernyy/ https://stoma26.ru/catalog/bandazhi/bandazh-posleoperatsionnyy-b-339-90-kreyt-6-chernyy/
+Redirect 301 /catalog/ortopedicheskie-izdeliya/kostyl-spodlokotnikom-i-ustroystvom-protivoskolzheniya-khomut/ https://stoma26.ru/catalog/kostyl-opornyy/kostyl-spodlokotnikom-i-ustroystvom-protivoskolzheniya-khomut/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/-tekhnicheskie-kharakteristiki-udobnyy-besshumnyy-i-nezametnyy-meshok-dreniruemyy-prozrachnyy-meshok/ https://stoma26.ru/catalog/dvukhkomponentnye-kalopriemniki/176370-urostomnye-meshki-coloplast-alterna-novogo-pokoleniya-dreniruemyy-prozrachnyy-flanets-40mm-/
+Redirect 301 /catalog/sredstva-maloy-reabilitatsii/bandazh-posleoperatsionnyy-b-333-kreyt-6-chernyy/ https://stoma26.ru/catalog/bandazhi/bandazh-posleoperatsionnyy-b-333-kreyt-6-chernyy/
+Redirect 301 /catalog/bandazh-dlya-plecha-i-predplechya/ https://stoma26.ru/catalog/bandazh-dlya-plechevogo-sustava/
+Redirect 301 /catalog/sredstva-maloy-reabilitatsii/bandazh-f-190-dlya-luchezapyastnogo-sustava-kreyt-1-chernyy/ https://stoma26.ru/catalog/bandazhi/bandazh-f-190-dlya-luchezapyastnogo-sustava-kreyt-1-chernyy/
+Redirect 301 /catalog/sredstva-maloy-reabilitatsii/bandazh-dlya-loktevogo-sustava-kreyt-4-chernyy/ https://stoma26.ru/catalog/bandazhi/bandazh-dlya-loktevogo-sustava-kreyt-4-chernyy/
+
+#Редиректы от 23.11.2022
+Redirect 301 /catalog/trost-opornaya/06-02-02-0005-trost-metallicheskaya-alyuminievyy-splav-dlya-slepykh-taktilnaya-120sm-14-527-t-120/ https://stoma26.ru/catalog/trost-opornaya/trost-dlya-slepykh-taktilnaya-s-ruchkoy-klyuka-120sm-art14-527-tk-120/
+Redirect 301 /catalog/meditsinskie-sredstva-dezinfektsii/maski-meditsinskie/ https://stoma26.ru/catalog/meditsinskie-sredstva-dezinfektsii/
+Redirect 301 /catalog/bandazhi/bandazh-f-209u-dlya-luchezapyastnogo-sustava-kreyt-1-chernyy/ https://stoma26.ru/catalog/bandazhi/bandazh-dlya-luchezapyastnogo-sustava-kreyt-1-chernyy-/
+Redirect 301 /catalog/bandazh-posleoperatsionnyy-na-bryushnuyu-polost/bandazh-posleoperatsionnyy-kreyt-5-chernyy-339-90/ https://stoma26.ru/catalog/bandazhi/b-346-bandazh-posleoperatsionnyy-kreyt-5-chernyy/
+Redirect 301 /catalog/ortopedicheskie-izdeliya/trost-metallicheskaya-reguliruemaya-po-vysote-mnogoopornaya-na-3-kh-oporakh-/ https://stoma26.ru/catalog/trost-opornaya/trost-metallicheskaya-reguliruemaya-po-vysote-mnogoopornaya-na-3-kh-oporakh-khomu-art22-3/
+Redirect 301 /catalog/sredstva-maloy-reabilitatsii/bandazh-dlya-luchezapyastnogo-sustava-kreyt-1-chernyy-/ https://stoma26.ru/catalog/bandazhi/bandazh-dlya-luchezapyastnogo-sustava-kreyt-1-chernyy-/
+Redirect 301 /catalog/katetery-zhenskie/ https://stoma26.ru/catalog/katetery-zhenskie-urologicheskie/
+Redirect 301 /catalog/kostyl-opornyy/kostyl-s-podlokotnikom-i-ustroystvom-protivoskolzheniya-khomut-art-26u/ https://stoma26.ru/catalog/kostyl-opornyy/kostyl-s-podlokotnikom-khomut-art26/
+Redirect 301 /catalog/bandazhi/bandazh-posleoperatsionnyy-b-339-90-kreyt-6-chernyy/ https://stoma26.ru/catalog/bandazhi/b-339-90-bandazh-posleoperatsionnyy-kreyt-6-chernyy/
+Redirect 301 /catalog/sredstva-maloy-reabilitatsii/bandazh-posleoperatsionnyy-b-339-90-kreyt-6-chernyy/ https://stoma26.ru/catalog/bandazhi/b-339-90-bandazh-posleoperatsionnyy-kreyt-6-chernyy/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-base-170/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-base-170/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-base-155/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-base-155/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/177500-plastina-konveksnaya-alterna-flanets-60mm/ https://stoma26.ru/catalog/dvukhkomponentnye-kalopriemniki/177500-plastina-konveksnaya-alterna-flanets-60mm-5-shtuk/
+#Редиректы от 12.01.23.
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-delux-500/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-delux-500/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-delux-510/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-delux-510/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-delux-560/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-delux-560/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-delux-570/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-delux-570/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-olvia-10/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-olvia-10/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-trend-40/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-trend-40/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-trend-60/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-trend-60/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-trend-65/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-trend-65/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-trend-70/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-trend-70/
+Redirect 301 /catalog/spetsialnaya-odezhda/komplekt-funktsionalno-esteticheskoy-odezhdy-dlya-invalidov-albrekht-letniy/ https://stoma26.ru/catalog/adaptivnaya-odezhda/komplekt-funktsionalno-esteticheskoy-odezhdy-dlya-invalidov-albrekht-letniy/
+Redirect 301 /catalog/spetsialnaya-odezhda/komplekt-funktsionalno-esteticheskoy-odezhdy-dlya-invalidov-albrekht-zimniy/ https://stoma26.ru/catalog/adaptivnaya-odezhda/komplekt-funktsionalno-esteticheskoy-odezhdy-dlya-invalidov-albrekht-zimniy/
+Redirect 301 /catalog/spetsialnaya-odezhda/ https://stoma26.ru/catalog/adaptivnaya-odezhda/ 
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-base-185-komnatnaya/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-base-185-komnatnaya/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-delux-540/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-delux-540/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-trend-25/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-trend-25/
+Redirect 301 /catalog/invalidnye-kolyaski/invalidnaya-kolyaska-base-190/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/invalidnaya-kolyaska-base-190/
+Redirect 301 /catalog/invalidnye-kolyaski/invalidnaya-kreslo-kolyaska-otto-bock-start/ https://stoma26.ru/catalog/invalidnye-kolyaski/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-base-160/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-base-160/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-base-195/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-base-195/ 
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-olvia-40/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-olvia-40/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-s-3000/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-s-3000/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-base-110/ https://stoma26.ru/catalog/kolyaski-s-elektroprivodom/kolyaska-s-elektroprivodom-pulse-110/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-base-120/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-base-120/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-base-145/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-base-145/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-delux-550/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-delux-550/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-s-2000/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-s-2000/
+Redirect 301 /catalog/bandazhi/b-346-bandazh-posleoperatsionnyy-kreyt-5-chernyy/ https://stoma26.ru/catalog/bandazhi/bandazh-dlya-loktevogo-sustava-kreyt-5-chernyy/
+Redirect 301 /catalog/invalidnye-kolyaski/invalidnaya-kolyaska-base-140/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/invalidnaya-kolyaska-base-140/
+Redirect 301 /catalog/invalidnye-kolyaski/kolyaska-kitty/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/kolyaska-kitty/
+Redirect 301 /catalog/invalidnye-kolyaski/kolyaska-lion/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/kolyaska-lion/
+Redirect 301 /catalog/invalidnye-kolyaski/kolyaska-panther-detskaya/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/kolyaska-panther-detskaya/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-base-100/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-base-100/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-base-105/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-base-105/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-base-115/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-base-115/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-base-130/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-base-130/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-base-135/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-base-135/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-base-150/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-base-150/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-base-185-progulochnaya/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-base-185-progulochnaya/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-leo-detskaya/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-leo-detskaya/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-olvia-20/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-olvia-20/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-olvia-30/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-olvia-30/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-puma-detskaya/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-puma-detskaya/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-s-4000/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-s-4000/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-s-5000/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-s-5000/
+Redirect 301 /catalog/invalidnye-kolyaski/mekhanicheskaya-kolyaska-tiger-detskaya/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/mekhanicheskaya-kolyaska-tiger-detskaya/
+#08/02/23
+Redirect 301 /catalog/meditsinskie-sredstva-dezinfektsii/zashchitnyy-krem-s-oksidom-tsinka-bez-vody-100-ml/ https://stoma26.ru/catalog/meditsinskie-sredstva-dezinfektsii/
+Redirect 301 /catalog/meditsinskie-sredstva-dezinfektsii/zashchitnyy-krem-s-bisabololom-bez-vody-100-ml/ https://stoma26.ru/catalog/meditsinskie-sredstva-dezinfektsii/
+Redirect 301 /catalog/meditsinskie-sredstva-dezinfektsii/shapochka-dlya-mytya-volos-bez-vody/ https://stoma26.ru/catalog/meditsinskie-sredstva-dezinfektsii/
+Redirect 301 /catalog/meditsinskie-sredstva-dezinfektsii/shampun-dlya-volos-bez-vody-100ml/ https://stoma26.ru/catalog/meditsinskie-sredstva-dezinfektsii/
+Redirect 301 /catalog/meditsinskie-sredstva-dezinfektsii/rukavitsy-dlya-mytya-tela-laminirovannye-bez-vody/ https://stoma26.ru/catalog/meditsinskie-sredstva-dezinfektsii/
+Redirect 301 /catalog/meditsinskie-sredstva-dezinfektsii/neytralizator-zapakha-bez-vody-100-ml/ https://stoma26.ru/catalog/meditsinskie-sredstva-dezinfektsii/
+Redirect 301 /catalog/meditsinskie-sredstva-dezinfektsii/gel-dlya-tela-bez-vody-100-ml/ https://stoma26.ru/catalog/meditsinskie-sredstva-dezinfektsii/
+Redirect 301 /catalog/stomnye-meshki/176010-alterna-stomnye-meshki-nedr-neprozr-fl50mm/ https://stoma26.ru/catalog/kalopriemniki/176010-alterna-stomnye-meshki-nedr-neprozr-fl50mm/
+Redirect 301 /catalog/bandazhi/bandazh-dlya-plecha-i-predplechya-kreyt-3/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/bandazhi/f-526-bandazh-dlya-kolennogo-sustava-kreyt-1-chernyy/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/podguzniki-dlya-vzroslykh/pelenki-odnorazovye-luxsan-60-kh-90-sm-30-sht/ https://stoma26.ru/catalog/
+Redirect 301 /catalog/mochepriemniki-prikrovatnye/1316107-mochepriemnik-vm1l-s-krest-kranom-odnorazovyy-sterilnyy-vogt-medical/ https://stoma26.ru/catalog/
+#Redirect 301 /catalog/tovary-dlya-ukhoda/doska-dlya-vanny-lux-310/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/doska-dlya-vanny-lux-310/
+#Redirect 301 /catalog/tovary-dlya-ukhoda/doska-dlya-vanny-lux-300/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/doska-dlya-vanny-lux-300/
+#Redirect 301 /catalog/tovary-dlya-ukhoda/doska-dlya-peresadki-dlya-krovati-70-kh-20-sm-belyy/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/doska-dlya-peresadki-dlya-krovati-70-kh-20-sm-belyy/
+#Redirect 301 /catalog/tovary-dlya-ukhoda/taburet-dlya-vanny-lux-585/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/taburet-dlya-vanny-lux-585/
+Redirect 301 /catalog/sredstva-maloy-reabilitatsii/bandazh-posleoperatsionnyy-kreyt-4-chernyy-339-90/ https://stoma26.ru/catalog/bandazh-posleoperatsionnyy-na-bryushnuyu-polost/bandazh-posleoperatsionnyy-kreyt-4-chernyy-339-90/
+#Redirect 301 /catalog/tovary-dlya-ukhoda/doska-dlya-vanny-lux-305/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/doska-dlya-vanny-lux-305/
+#Redirect 301 /catalog/tovary-dlya-ukhoda/sidene-dlya-vanny-lux-440/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/sidene-dlya-vanny-lux-440/
+#Redirect 301 /catalog/tovary-dlya-ukhoda/sidene-dlya-vanny-lux-450/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/sidene-dlya-vanny-lux-450/
+#Redirect 301 /catalog/tovary-dlya-ukhoda/taburet-dlya-vanny-lux-510/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/taburet-dlya-vanny-lux-510/
+#Redirect 301 /catalog/tovary-dlya-ukhoda/sidene-dlya-vanny-lux-430/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/sidene-dlya-vanny-lux-430/
+#Redirect 301 /catalog/tovary-dlya-ukhoda/taburet-dlya-vanny-lux-565/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/taburet-dlya-vanny-lux-565/
+#Redirect 301 /catalog/tovary-dlya-ukhoda/sidene-dlya-vanny-lux-460/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/sidene-dlya-vanny-lux-460/
+Redirect 301 /catalog/mochepriemniki-nozhnye/mochepriemnik-1000-ml-prikrovatnyy-approximate/ https://stoma26.ru/catalog/mochepriemniki-prikrovatnye/mochepriemnik-1000-ml-prikrovatnyy-approximate/
+#Redirect 301 /catalog/kalopriemniki/alterna-stomnye-meshki-dreniruemye-neprozrachnye-flanets-50-mm/ https://stoma26.ru/catalog/kalopriemniki/
+#Redirect 301 /catalog/kalopriemniki/alterna-plastiny-ploskie-s-krepleniyami-dlya-poyasa-50-mm/ https://stoma26.ru/catalog/kalopriemniki/
+Redirect 301 /catalog/mochepriemniki-prikrovatnye/mochepriemnik-vm1l-s-krest-kranom-1316107-vogt-medical-/ https://stoma26.ru/catalog/mochepriemniki-prikrovatnye/
+Redirect 301 /catalog/mekhanicheskie-kolyaski/delux-510/ https://stoma26.ru/catalog/mekhanicheskie-kolyaski/invalidnaya-kolyaska-delux-510/
+Redirect 301 /catalog/ortopedicheskie-bryuki/ https://stoma26.ru/catalog/ortopedicheskie-bryuki_1/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/401544-meshok-urostomnyy-kombigeziv-natura-45mm/ https://stoma26.ru/catalog/dvukhkomponentnye-kalopriemniki/meshok-urostomnyy-kombigeziv-natura-flanets-45mm/
+Redirect 301 /catalog/stomnye-meshki/176020-alterna-stomnye-meshki-nedreniruemye-neprozrachnye-flanets-60mm/ https://stoma26.ru/catalog/stomnye-meshki/alterna-stomnye-meshki-nedreniruemye-neprozrachnye-flanets-60mm/
+Redirect 301 /catalog/odnokomponentnye-kalopriemniki/odnokomponentnyy-uropriemnik-so-vstroennoy-ploskoy-plastinoy-prozrachnyy-vyrezaemoe-otverstie-10-55m/ https://stoma26.ru/catalog/mochepriemniki/odnokomponentnyy-uropriemnik-so-vstroennoy-ploskoy-plastinoy-prozrachnyy-vyrezaemoe-otverstie-10-55m/
+Redirect 301 /catalog/kalopriemniki-odnokomponentnye-dreniruemye-so-vstroennoy-ploskoy-plastinoy/kalopriemnik-abutsel-vt-polimernyy-dren-odnokomp-dlya-stom-20-80mm-/ https://stoma26.ru/catalog/kalopriemniki-odnokomponentnye-dreniruemye-so-vstroennoy-ploskoy-plastinoy/kalopriemnik-abutsel-vt-polimernyy-dreniruemyy-odnokomponentnyy-dlya-stom-20-80mm-/
+Redirect 301 /catalog/katetery-urologicheskie/053700-easicath-katetery-dlya-samokateterizatsii-lubritsirovannye-nelaton-zh10-3-3mm-dl-200/ https://stoma26.ru/catalog/katetery-urologicheskie/easicath-katetery-dlya-samokateterizatsii-lubritsirovannye-nelaton-zh10-3-3mm-dl-200/
+Redirect 301 /catalog/prochee/11-01-02-prisposoblenie-dlya-nadevaniya-kolgot/ https://stoma26.ru/catalog/prochee/prisposoblenie-dlya-nadevaniya-kolgot/
+Redirect 301 /catalog/prochee/11-01-09-0001-kryuk-na-dlinnoy-ruchke-dlya-otkryvaniya-fortochek-stvorok-okna-i-inykh-predmetov/ https://stoma26.ru/catalog/prochee/kryuk-na-dlinnoy-ruchke-dlya-otkryvaniya-fortochek-stvorok-okna-i-inykh-predmetov/
+Redirect 301 /catalog/stomnye-meshki/176390-urostomnye-meshki-prozrachnye-flanets-60mm-bolshie/ https://stoma26.ru/catalog/stomnye-meshki/urostomnye-meshki-coloplast-alterna-prozrachnye-flanets-60mm-bolshie/
+Redirect 301 /catalog/sredstva-po-ukhodu-za-stomoy/21-01-41-0002-zashchitnye-koltsa-dlya-kozhi-vokrug-stomy/ https://stoma26.ru/catalog/sredstva-po-ukhodu-za-stomoy/zashchitnye-koltsa-brava-dlya-kozhi-vokrug-stomy-modeliruemye-2-0-mm/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/alterna-plastiny-ploskie-s-krepleniyami-dlya-poyasa-50-mm/ https://stoma26.ru/catalog/dvukhkomponentnye-kalopriemniki/177060-alterna-plastiny-ploskie-s-krepleniyami-dlya-poyasa-50-mm/
+Redirect 301 /catalog/tovary-dlya-ukhoda/poruchen-dlya-vanny-lux-19/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/poruchen-dlya-vanny-lux-19/
+Redirect 301 /catalog/tovary-dlya-ukhoda/poruchen-dlya-vanny-lux-18/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/poruchen-dlya-vanny-lux-18/
+Redirect 301 /catalog/tovary-dlya-ukhoda/poruchen-dlya-vanny-lux-10/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/poruchen-dlya-vanny-lux-10/
+Redirect 301 /catalog/tovary-dlya-ukhoda/stul-dlya-vanny-lux-665/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/stul-dlya-vanny-lux-665/
+Redirect 301 /catalog/tovary-dlya-ukhoda/stul-dlya-vanny-lux-660/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/stul-dlya-vanny-lux-660/
+Redirect 301 /catalog/tovary-dlya-ukhoda/taburet-dlya-vanny-lux-530/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/taburet-dlya-vanny-lux-530/
+Redirect 301 /catalog/tovary-dlya-ukhoda/stul-dlya-vanny-lux-625/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/stul-dlya-vanny-lux-625/
+Redirect 301 /catalog/tovary-dlya-ukhoda/stul-dlya-vanny-lux-605/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/stul-dlya-vanny-lux-605/
+Redirect 301 /catalog/tovary-dlya-ukhoda/stul-dlya-vanny-lux-675/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/stul-dlya-vanny-lux-675/
+Redirect 301 /catalog/tovary-dlya-ukhoda/stul-dlya-vanny-lux-620/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/stul-dlya-vanny-lux-620/
+Redirect 301 /catalog/tovary-dlya-ukhoda/doska-dlya-peresadki-dlya-krovati-70-kh-20-sm-belyy/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/doska-dlya-peresadki-dlya-krovati-70-kh-20-sm-belyy/
+Redirect 301 /catalog/tovary-dlya-ukhoda/sidene-dlya-vanny-lux-460/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/sidene-dlya-vanny-lux-460/
+Redirect 301 /catalog/tovary-dlya-ukhoda/taburet-dlya-vanny-lux-585/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/taburet-dlya-vanny-lux-585/
+Redirect 301 /catalog/tovary-dlya-ukhoda/taburet-dlya-vanny-lux-565/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/taburet-dlya-vanny-lux-565/
+Redirect 301 /catalog/tovary-dlya-ukhoda/taburet-dlya-vanny-lux-510/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/taburet-dlya-vanny-lux-510/
+Redirect 301 /catalog/tovary-dlya-ukhoda/taburet-dlya-vanny-lux-505/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/taburet-dlya-vanny-lux-505/
+Redirect 301 /catalog/tovary-dlya-ukhoda/sidene-dlya-vanny-lux-440/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/sidene-dlya-vanny-lux-440/
+Redirect 301 /catalog/tovary-dlya-ukhoda/sidene-dlya-vanny-lux-450/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/sidene-dlya-vanny-lux-450/
+Redirect 301 /catalog/tovary-dlya-ukhoda/sidene-dlya-vanny-lux-430/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/sidene-dlya-vanny-lux-430/
+Redirect 301 /catalog/tovary-dlya-ukhoda/doska-dlya-vanny-lux-300/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/doska-dlya-vanny-lux-300/
+Redirect 301 /catalog/tovary-dlya-ukhoda/doska-dlya-vanny-lux-330/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/doska-dlya-vanny-lux-330/
+Redirect 301 /catalog/tovary-dlya-ukhoda/doska-dlya-vanny-lux-305/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/doska-dlya-vanny-lux-305/
+Redirect 301 /catalog/tovary-dlya-ukhoda/doska-dlya-vanny-lux-310/ https://stoma26.ru/catalog/tovary-dlya-gigieny-i-ukhoda/doska-dlya-vanny-lux-310/
+Redirect 301 /catalog/prochee/11-01-04-prisposoblenie-kryuchok-dlya-zastegivaniya-pugovits-progress/ https://stoma26.ru/catalog/prochee/prisposoblenie-kryuchok-dlya-zastegivaniya-pugovits-progress/
+Redirect 301 /catalog/prochee/11-01-01-prisposoblenie-dlya-nadevaniya-rubashek/ https://stoma26.ru/catalog/prochee/prisposoblenie-dlya-nadevaniya-rubashek/
+Redirect 301 /catalog/kalopriemniki/55410-10-70mm-kalopriemnik-otkrytye-telesnye-s-myagkim-zazhimom-almarys-braun/ https://stoma26.ru/catalog/kalopriemniki/kalopriemnik-otkrytye-telesnye-s-myagkim-zazhimom-10-70mm-almarys-braun/
+Redirect 301 /catalog/kalopriemniki/176010-alterna-stomnye-meshki-nedr-neprozr-fl50mm/ https://stoma26.ru/catalog/kalopriemniki/-alterna-stomnye-meshki-nedr-neprozr-fl-50mm/
+Redirect 301 /catalog/kalopriemniki-odnokomponentnye-dreniruemye-so-vstroennoy-ploskoy-plastinoy/21-01-01-0012-odnokomponentnyy-dreniruemyy-kalopriemnik-so-vstroennoy-ploskoy-plastinoy-alterna-fri-/ https://stoma26.ru/catalog/kalopriemniki-odnokomponentnye-dreniruemye-so-vstroennoy-ploskoy-plastinoy/odnokomponentnyy-dreniruemyy-kalopriemnik-so-vstroennoy-ploskoy-plastinoy-alterna-fri-/
+Redirect 301 /catalog/stomnye-meshki/176200-stomnye-meshki-dreniruemye-neprozrachnye-flanets-40-mm-bolshie/ https://stoma26.ru/catalog/stomnye-meshki/stomnye-meshki-dreniruemye-neprozrachnye-flanets-40-mm-bolshie/
+Redirect 301 /catalog/plastiny-dlya-kalopriemnikov/177410-dlya-vtyanutykh-stom-adgezivnaya-plastina-konveksnaya-light-flanets-60-mm-vyrezaemoe-15-43mm/ https://stoma26.ru/catalog/plastiny-dlya-kalopriemnikov/dlya-vtyanutykh-stom-adgezivnaya-plastina-konveksnaya-light-flanets-60-mm-vyrezaemoe-15-43mm/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/177500-plastina-konveksnaya-alterna-flanets-60mm-5-shtuk/ https://stoma26.ru/catalog/dvukhkomponentnye-kalopriemniki/plastina-konveksnaya-alterna-flanets-60mm/
+Redirect 301 /catalog/dvukhkomponentnye-kalopriemniki/176370-urostomnye-meshki-coloplast-alterna-novogo-pokoleniya-dreniruemyy-prozrachnyy-flanets-40mm-/ https://stoma26.ru/catalog/dvukhkomponentnye-kalopriemniki/urostomnye-meshki-coloplast-alterna-novogo-pokoleniya-dreniruemyy-prozrachnyy-flanets-40mm-/
+Redirect 301 /catalog/kalopriemniki-odnokomponentnye-dreniruemye-so-vstroennoy-ploskoy-plastinoy/058850-odnokomponentnyy-dreniruemyy-kalopriemnik-so-vstroennoy-ploskoy-plastinoy-10-70-mm/ https://stoma26.ru/catalog/kalopriemniki-odnokomponentnye-dreniruemye-so-vstroennoy-ploskoy-plastinoy/odnokomponentnyy-dreniruemyy-kalopriemnik-so-vstroennoy-ploskoy-plastinoy-10-70-mm/
+Redirect 301 /catalog/odnokomponentnye-kalopriemniki/061000-kalopriemnik-dreniruemyy-prozrachnyy-bolshoy-coloplast-ms2000/ https://stoma26.ru/catalog/odnokomponentnye-kalopriemniki/kalopriemnik-dreniruemyy-prozrachnyy-bolshoy-coloplast-ms2000/
+Redirect 301 /catalog/kalopriemniki-odnokomponentnye-dreniruemye-so-vstroennoy-ploskoy-plastinoy/21-01-01-0010-odnokomponentnyy-dreniruemyy-kalopriemnik-so-vstroennoy-ploskoy-plastinoy/ https://stoma26.ru/catalog/kalopriemniki-odnokomponentnye-dreniruemye-so-vstroennoy-ploskoy-plastinoy/odnokomponentnyy-dreniruemyy-kalopriemnik-so-vstroennoy-ploskoy-plastinoy/
+Redirect 301 /catalog/katetery-zhenskie-urologicheskie/053680-kateter-dlya-samokateterizatsii-lubritsirovannyy-zh8-2-7mm-dl-200/ https://stoma26.ru/catalog/katetery-urologicheskie/kateter-dlya-samokateterizatsii-lubritsirovannyy-m10-3-3-mm-dl-400/
+Redirect 301 /catalog/katetery-lubritsirovannye/053540-kateter-dlya-samokateterizatsii-lubritsirovannyy-m14-4-7mm-dl-400/ https://stoma26.ru/catalog/katetery-lubritsirovannye/kateter-dlya-samokateterizatsii-lubritsirovannyy-m14-4-7mm-dl-400/
+Redirect 301 /catalog/katetery-zhenskie-urologicheskie/053740-katetery-dlya-samokateterizatsii-lubritsirovannye-zh-14/ https://stoma26.ru/catalog/katetery-zhenskie-urologicheskie/katetery-dlya-samokateterizatsii-lubritsirovannye-zh-14/
+Redirect 301 /catalog/katetery-urologicheskie/053520-easicath-katetery-dlya-samokateterizatsii-lubritsirovannye-nelaton-m12-4-0mm-dl-400/ https://stoma26.ru/catalog/katetery-urologicheskie/easicath-katetery-dlya-samokateterizatsii-lubritsirovannye-nelaton-m12-4-0mm-dl-400/
+Redirect 301 /catalog/katetery-urologicheskie/053760-kateter-dlya-samokateterizatsii-lubritsirovannyy-zh16-5-3mm/ https://stoma26.ru/catalog/katetery-urologicheskie/kateter-dlya-samokateterizatsii-lubritsirovannyy-zh16-5-3mm/
+Redirect 301 /catalog/katetery-urologicheskie/053480-easicath-katetery-dlya-samokateterizatsii-lubritsirovannye-nelaton-m8-2-7mm-dl-400/ https://stoma26.ru/catalog/katetery-urologicheskie/easicath-katetery-dlya-samokateterizatsii-lubritsirovannye-nelaton-m8-2-7mm-dl-400/
+Redirect 301 /catalog/katetery-urologicheskie/053560-easicath-katetery-dlya-samokateterizatsii-lubritsirovannye-nelaton-m16-5-3mm-dl-400/ https://stoma26.ru/catalog/katetery-urologicheskie/easicath-katetery-dlya-samokateterizatsii-lubritsirovannye-nelaton-m16-5-3mm-dl-400/
+Redirect 301 /catalog/sideniya-dlya-vanny/taburet-dlya-vanny-lux-505/ https://stoma26.ru/catalog/stulya-dlya-vanny/taburet-dlya-vanny-lux-505/
+Redirect 301 /catalog/tovary-dlya-gigieny-i-ukhoda/taburet-dlya-vanny-lux-505/ https://stoma26.ru/catalog/stulya-dlya-vanny/taburet-dlya-vanny-lux-505/
+Redirect 301 /catalog/tovary-dlya-gigieny-i-ukhoda/taburet-dlya-vanny-lux-565/ https://stoma26.ru/catalog/stulya-dlya-vanny/taburet-dlya-vanny-lux-565/

@@ -1,0 +1,1 @@
+<a href="<?=SITE_DIR?>"><img alt="logo.png" src="/upload/medialibrary/fc3/wxvp3s0w7svwynduip5spk7h37fzjwzg.png" title="Stoma26"></a>

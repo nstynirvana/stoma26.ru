@@ -1,0 +1,49 @@
+.catalog-sub-menu:hover .sub-menu{
+	display: flex!important;
+	flex-direction: column;
+	position: relative;
+	bottom: 410px;
+	width: 500px;
+	border-radius: 5px;
+}
+
+.catalog-sub-menu .sub-menu{
+	transition: all 300ms;
+}
+.catalog-sub-menu:hover .sub-menu .left-menu{
+	display: flex;
+	flex-direction: column;
+	background: #c2c3cd;
+	width: 300px;
+
+}
+.catalog-sub-menu .sub-menu .left-menu{
+	transition: all 300ms;
+}
+
+.catalog-sub-menu:hover{
+	height: 10px;
+	width: 80px;
+	position: relative;
+}
+
+.catalog-sub-menu:hover .sub-menu .left-menu .parent a{
+	width: 100%;
+	overflow: hidden;
+}
+.catalog-sub-menu:hover .sub-menu .left-menu .parent{
+	width: 100%;
+}
+.catalog-sub-menu:hover .sub-menu .left-menu .parent:hover .catalog-section-childs{
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.catalog-sub-menu:hover .sub-menu .left-menu .parent .catalog-section-childs .catalog-section-child a .child , .catalog-sub-menu:hover .sub-menu .left-menu .parent .catalog-section-childs .catalog-section-child a .child .text-cont{
+	width: -webkit-fill-available;
+}
+.catalog-sub-menu:hover .sub-menu .left-menu .parent .catalog-section-childs .catalog-section-child a{
+	width: -webkit-fill-available;
+}
+.catalog-sub-menu:hover .sub-menu .left-menu .parent .catalog-section-childs .catalog-section-child{
+	width: -webkit-fill-available;
+}
