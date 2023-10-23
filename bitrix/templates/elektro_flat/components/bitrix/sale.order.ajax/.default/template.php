@@ -148,9 +148,9 @@ if(strlen($request->get('ORDER_ID')) > 0) {
 							<div class="bx-soa-section-title">
 								<span class="bx-soa-section-title-count"><i class="fa fa-check" aria-hidden="true"></i><i class="fa fa-info" aria-hidden="true"></i><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span><?=$arParams['MESS_BASKET_BLOCK_NAME']?>
 							</div>
-							<div class="bx-soa-section-edit">
-								<a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
-							</div>
+                            <button class="bx-soa-section-edit">
+                                <a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
+                            </button>
 						</div>
 						<div class="bx-soa-section-content"></div>
 					</div>
@@ -161,9 +161,9 @@ if(strlen($request->get('ORDER_ID')) > 0) {
 						<div class="bx-soa-section-title">
 							<span class="bx-soa-section-title-count"><i class="fa fa-check" aria-hidden="true"></i><i class="fa fa-info" aria-hidden="true"></i><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span><?=$arParams['MESS_REGION_BLOCK_NAME']?>
 						</div>
-						<div class="bx-soa-section-edit">
-							<a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
-						</div>
+                        <button class="bx-soa-section-edit">
+                            <a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
+                        </button>
 					</div>
 					<div class="bx-soa-section-content"></div>
 				</div>
@@ -174,9 +174,9 @@ if(strlen($request->get('ORDER_ID')) > 0) {
 							<div class="bx-soa-section-title">
 								<span class="bx-soa-section-title-count"><i class="fa fa-check" aria-hidden="true"></i><i class="fa fa-info" aria-hidden="true"></i><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span><?=$arParams['MESS_PAYMENT_BLOCK_NAME']?>
 							</div>
-							<div class="bx-soa-section-edit">
-								<a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
-							</div>
+                            <button class="bx-soa-section-edit">
+                                <a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
+                            </button>
 						</div>
 						<div class="bx-soa-section-content"></div>
 					</div>
@@ -186,9 +186,9 @@ if(strlen($request->get('ORDER_ID')) > 0) {
 							<div class="bx-soa-section-title">
 								<span class="bx-soa-section-title-count"><i class="fa fa-check" aria-hidden="true"></i><i class="fa fa-info" aria-hidden="true"></i><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span><?=$arParams['MESS_DELIVERY_BLOCK_NAME']?>
 							</div>
-							<div class="bx-soa-section-edit">
-								<a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
-							</div>
+                            <button class="bx-soa-section-edit">
+                                <a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
+                            </button>
 						</div>
 						<div class="bx-soa-section-content"></div>
 					</div>
@@ -198,9 +198,9 @@ if(strlen($request->get('ORDER_ID')) > 0) {
 							<div class="bx-soa-section-title">
 								<span class="bx-soa-section-title-count"><i class="fa fa-check" aria-hidden="true"></i><i class="fa fa-info" aria-hidden="true"></i><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
 							</div>
-							<div class="bx-soa-section-edit">
-								<a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
-							</div>
+                            <button class="bx-soa-section-edit">
+                                <a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
+                            </button>
 						</div>
 						<div class="bx-soa-section-content"></div>
 					</div>
@@ -211,9 +211,9 @@ if(strlen($request->get('ORDER_ID')) > 0) {
 							<div class="bx-soa-section-title">
 								<span class="bx-soa-section-title-count"><i class="fa fa-check" aria-hidden="true"></i><i class="fa fa-info" aria-hidden="true"></i><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span><?=$arParams['MESS_DELIVERY_BLOCK_NAME']?>
 							</div>
-							<div class="bx-soa-section-edit">
-								<a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
-							</div>
+                            <button class="bx-soa-section-edit">
+                                <a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
+                            </button>
 						</div>
 						<div class="bx-soa-section-content"></div>
 					</div>
@@ -223,9 +223,9 @@ if(strlen($request->get('ORDER_ID')) > 0) {
 							<div class="bx-soa-section-title">
 								<span class="bx-soa-section-title-count"><i class="fa fa-check" aria-hidden="true"></i><i class="fa fa-info" aria-hidden="true"></i><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span>
 							</div>
-							<div class="bx-soa-section-edit">
-								<a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
-							</div>
+                            <button class="bx-soa-section-edit">
+                                <a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
+                            </button>
 						</div>
 						<div class="bx-soa-section-content"></div>
 					</div>
@@ -235,9 +235,9 @@ if(strlen($request->get('ORDER_ID')) > 0) {
 							<div class="bx-soa-section-title">
 								<span class="bx-soa-section-title-count"><i class="fa fa-check" aria-hidden="true"></i><i class="fa fa-info" aria-hidden="true"></i><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span><?=$arParams['MESS_PAYMENT_BLOCK_NAME']?>
 							</div>
-							<div class="bx-soa-section-edit">
-								<a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
-							</div>
+                            <button class="bx-soa-section-edit">
+                                <a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
+                            </button>
 						</div>
 						<div class="bx-soa-section-content"></div>
 					</div>
@@ -248,9 +248,9 @@ if(strlen($request->get('ORDER_ID')) > 0) {
 						<div class="bx-soa-section-title">
 							<span class="bx-soa-section-title-count"><i class="fa fa-check" aria-hidden="true"></i><i class="fa fa-info" aria-hidden="true"></i><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span><?=$arParams['MESS_BUYER_BLOCK_NAME']?>
 						</div>
-						<div class="bx-soa-section-edit">
-							<a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
-						</div>
+                        <button class="bx-soa-section-edit">
+                            <a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
+                        </button>
 					</div>
 					<div class="bx-soa-section-content"></div>
 				</div>
@@ -261,9 +261,9 @@ if(strlen($request->get('ORDER_ID')) > 0) {
 							<div class="bx-soa-section-title">
 								<span class="bx-soa-section-title-count"><i class="fa fa-check" aria-hidden="true"></i><i class="fa fa-info" aria-hidden="true"></i><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span><?=$arParams['MESS_BASKET_BLOCK_NAME']?>
 							</div>
-							<div class="bx-soa-section-edit">
-								<a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
-							</div>
+                            <button class="bx-soa-section-edit">
+                                <a href="javascript:void(0)" class="bx-soa-editstep"><?=$arParams['MESS_EDIT']?></a>
+                            </button>
 						</div>
 						<div class="bx-soa-section-content"></div>
 					</div>
@@ -310,6 +310,7 @@ if(strlen($request->get('ORDER_ID')) > 0) {
 								});
 							}
 						});
+
 					</script>
 				<?}
 				//ORDER SAVE BLOCK//?>
@@ -482,4 +483,15 @@ if(strlen($request->get('ORDER_ID')) > 0) {
 			})();
 		<?endif?>
 	</script>
+    <script>
+        $('.bx-soa-section').each(function() {
+            var $section = $(this);
+            if ($section.attr('data-visited') === 'false') {
+                $(this).find('.bx-soa-section-edit').css('background', 'transparent');
+            }
+        });
+
+    </script>
+
+
 <?}?>

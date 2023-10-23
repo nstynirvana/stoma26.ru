@@ -20,12 +20,12 @@ if(count($arResult["ITEMS"]) < 1)
 						<img src="<?=$arItem['PICTURE_PREVIEW']['SRC']?>" width="<?=$arItem['PICTURE_PREVIEW']['WIDTH']?>" height="<?=$arItem['PICTURE_PREVIEW']['HEIGHT']?>" alt="<?=$arItem['NAME']?>" />
 					</a>
 				<?}elseif ($arItem["NAME"] == "Оплата ТСР") {
-					$arItem['PICTURE_PREVIEW']['SRC'] = "/upload/iblock/db8/pusvhd7hkuvksplhiu93fdx92ke6831x.png";?>
+					$arItem['PICTURE_PREVIEW']['SRC'] = "/upload/iblock/666/xsu4hgu75gyotx9dhmqqw6pgcinnrseo.png";?>
 					<a href="javascript:void(0)" title="<?=$arItem['NAME']?>">
 						<img src="<?=$arItem['PICTURE_PREVIEW']['SRC']?>" width="<?=$arItem['PICTURE_PREVIEW']['WIDTH']?>" height="<?=$arItem['PICTURE_PREVIEW']['HEIGHT']?>" alt="<?=$arItem['NAME']?>" />
 					</a>
 				<?}if ($arItem["NAME"] == "Компенсация ФСС") {
-					$arItem['PICTURE_PREVIEW']['SRC'] = "/upload/iblock/494/4qpmy63tvspr5l19z19q40kvm0pxggto.png";?>
+					$arItem['PICTURE_PREVIEW']['SRC'] = "/upload/iblock/a32/xglwa42xdtf77oknnacs2x0vapudteem.png";?>
 					<a href="javascript:void(0)" title="<?=$arItem['NAME']?>">
 						<img src="<?=$arItem['PICTURE_PREVIEW']['SRC']?>" width="<?=$arItem['PICTURE_PREVIEW']['WIDTH']?>" height="<?=$arItem['PICTURE_PREVIEW']['HEIGHT']?>" alt="<?=$arItem['NAME']?>" />
 					</a>

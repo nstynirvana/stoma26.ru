@@ -205,15 +205,27 @@
 }
 
 .bx-soa-section-edit{
-	 display:table-cell;
-	 vertical-align:middle;
-	 text-align:right;
+	display:table-cell;
+	vertical-align:middle;
+	font-size: 11px !important;
+	font-weight: 400 !important;
+	float: right;
+	text-align: center;
+	text-transform: uppercase;
+	border: none;
+	transition: all 0.15s ease 0s;
+	font-family: "Open Sans", sans-serif;
+	color: #fff;
+	margin-top: 2.5px;
 }
 
 .bx-soa-editstep:link,
 .bx-soa-editstep:visited {
 	text-decoration:none;
-	border-bottom:1px dashed;
+	color: #fff;
+	background: #9cc218;
+	padding: 5px 20px;
+	border-radius: 4px;
 }
 
 .bx-soa-editstep:hover {
@@ -221,7 +233,7 @@
 }
 
 .bx-soa-section.bx-selected .bx-soa-editstep {
-	display:none;
+	/*display:none;*/
 }
 
 .bx-soa-section-content{
