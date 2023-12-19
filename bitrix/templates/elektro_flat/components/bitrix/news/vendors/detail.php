@@ -311,14 +311,7 @@ if($arSetting["VENDORS_VIEW"]["VALUE"] == "SECTIONS") {
 	);?>
 <?}
 
-//DESCRIPTION//
-if(!empty($arCurVendor["PREVIEW_TEXT"])) {
-	if(!$_REQUEST["PAGEN_1"] || empty($_REQUEST["PAGEN_1"]) || $_REQUEST["PAGEN_1"] <= 1) {?>
-		<div class="catalog_description">
-			<?=$arCurVendor["PREVIEW_TEXT"];?>
-		</div>
-	<?}
-}
+
 
 //BIGDATA_ITEMS//
 if(!isset($arParams["USE_BIG_DATA"]) || $arParams["USE_BIG_DATA"] != "N") {
@@ -431,6 +424,15 @@ if(!isset($arParams["USE_BIG_DATA"]) || $arParams["USE_BIG_DATA"] != "N") {
 		false
 	);?>
 <?}
+
+//DESCRIPTION//
+if(!empty($arCurVendor["PREVIEW_TEXT"])) {
+    if(!$_REQUEST["PAGEN_1"] || empty($_REQUEST["PAGEN_1"]) || $_REQUEST["PAGEN_1"] <= 1) {?>
+        <div class="catalog_description">
+            <?=$arCurVendor["PREVIEW_TEXT"];?>
+        </div>
+    <?}
+}
 
 //META_PROPERTY//
 $APPLICATION->SetTitle(!empty($arCurVendor["IPROPERTY_VALUES"]["ELEMENT_PAGE_TITLE"]) ? $arCurVendor["IPROPERTY_VALUES"]["ELEMENT_PAGE_TITLE"] : $arCurVendor["NAME"]);
